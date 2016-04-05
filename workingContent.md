@@ -29,7 +29,7 @@ Grid of pictures:
    * Caption: Geosampling data was initially collected via notebook.
 * ![Simplied via pre-printed Field Data Book](noteBook2.jpg) | ![With labels for more accurate entry](noteBook3.jpg)
    * Combined image caption: CSIRO Researchers then moved to pre-printed field notebooks for more accurate data entry.
-* ![CSIROWireframe.pdf]
+* ![CSIROWireframe.pdf](CSIROWireframe.png)
    * Caption: Imported into FAIMS Mobile. CSIRO workflow modeled in the generalised field recording app. Once approved, this workflow was implemented.
 * ![dataSchema.png](dataSchema.png) | ![uiLogic.png](uiLogic.png) | ![uiSchema.png](uiSchema.png)
     * Caption: Available at https://github.com/FAIMS/CSIRO-Geochemistry-Sampling. These are the primary files which implement a scriptable model (data schema), view (ui schema), and controlller (ui logic) field data recording implementation. By scripting a field recording workflow, the app itself can function on supporting field recording in network-degraded environments, and individual "modules" (functioning sets of these scripts) can focus on implementing highly specific and customised workflows.
