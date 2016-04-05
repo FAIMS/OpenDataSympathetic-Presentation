@@ -1,7 +1,13 @@
 Working repo for: EGU2016-13182
-Using the FAIMS Mobile App for field data recording
-by Brian Ballsun-Stanton et al.
-accepted in Session ESSI3.5/GI1.5 Free and Open Source Software (FOSS) for Geoinformatics and Geosciences (co-organized) # Using the FAIMS Mobile App for field data recording Brian Ballsun-Stanton (1), Jens Klump (2), and Shawn Ross (1) (1) FAIMS Project, Macquarie University, Sydney, Australia (brian.ballsun-stanton@mq.edu.au), (2) CSIRO Mineral Resources, CSIRO, Bentley, Australia (Jens.Klump@csiro.au) 
+accepted in Session ESSI3.5/GI1.5 Free and Open Source Software (FOSS) for Geoinformatics and Geosciences (co-organized) 
+
+# Using the FAIMS Mobile App for field data recording 
+
+Brian Ballsun-Stanton (1), Jens Klump (2), and Shawn Ross (1)
+
+(1) FAIMS Project, Macquarie University, Sydney, Australia (brian.ballsun-stanton@mq.edu.au), 
+
+(2) CSIRO Mineral Resources, CSIRO, Bentley, Australia (Jens.Klump@csiro.au) 
 
 Multiple people creating data in the field poses a hard technical problem: our “web 2.0” environment presumes constant connectivity, data “authority” held by centralised servers, and sees mobile devices as tools for presentation rather than tools for origination. A particular design challenge is the remoteness of the sampling locations, hundreds of kilometres away from network access. The alternative, however, is hand collection with a lengthy, error prone, and expensive digitisation process. 
 
