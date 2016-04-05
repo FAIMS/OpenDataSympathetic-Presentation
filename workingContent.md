@@ -58,8 +58,7 @@ Caption: Data was collected on multiple tablets in the field
 Cell 7: | Cell 8: | Cell 9:
 --------|---------|-----------
 ![truck](faimsInTruck.jpg) | ![export](export.png) | no pic yet
-Caption: FAIMS is designed to work completely offline, allowing asynchronous work on multiple tablets with eventual sync. The server, here, was built into a portable UPS in the truck. | 
-Caption: After return to base, data exported (via customisable exporter) into shapefiles, a sqlite database, and CSVs. All pictures are renamed to the record they belong to and tagged with their record's meta-data. | ??
+Caption: FAIMS is designed to work completely offline, allowing asynchronous work on multiple tablets with eventual sync. The server, here, was built into a portable UPS in the truck. | Caption: After return to base, data exported (via customisable exporter) into shapefiles, a sqlite database, and CSVs. All pictures are renamed to the record they belong to and tagged with their record's meta-data. | ??
 
 
 
