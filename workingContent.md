@@ -63,11 +63,11 @@ Caption: Data was collected on multiple tablets in the field
 
 ## Cell 7
 ![truck](faimsInTruck.jpg) 
-Caption: After return to base, data exported (via customisable exporter) into shapefiles, a sqlite database, and CSVs. All pictures are renamed to the record they belong to and tagged with their record's meta-data.
+Caption: FAIMS is designed to work completely offline, allowing asynchronous work on multiple tablets with eventual sync. The server, here, was built into a portable UPS in the truck.
 
 ## Cell 8
-![export](export.png) 
-Caption: FAIMS is designed to work completely offline, allowing asynchronous work on multiple tablets with eventual sync. The server, here, was built into a portable UPS in the truck.
+![export](export.png) | ![exportData](exportData.png)
+Caption: After return to base, data exported (via customisable exporter) into shapefiles, a sqlite database, and CSVs. All pictures are renamed to the record they belong to and tagged with their record's meta-data. This exporter (https://github.com/FAIMS/shapefileExport) is also completely customisable, up to and including running arbitrary linux programs. This one uses imagemagick and mogrify to properly export photos as well as spatialite-tool to export shapefiles. 
 
 
 ## Bottom Discussion
