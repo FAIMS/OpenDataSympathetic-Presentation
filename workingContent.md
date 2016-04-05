@@ -25,16 +25,42 @@ This poster will describe the internal architecture of the FAIMS app, show how i
 Intent of slide: captioned visual narrative. This slide can be used to describe the complete workflow of module history, generation, and use
 
 Grid of pictures: 
-* ![Geosampling data was initially collected via notebook.](noteBook1.jpg)
-   * Caption: Geosampling data was initially collected via notebook.
-* ![Simplied via pre-printed Field Data Book](noteBook2.jpg) | ![With labels for more accurate entry](noteBook3.jpg)
-   * Combined image caption: CSIRO Researchers then moved to pre-printed field notebooks for more accurate data entry.
-* ![CSIROWireframe.pdf](CSIROWireframe.png)
-   * Caption: Imported into FAIMS Mobile. CSIRO workflow modeled in the generalised field recording app. Once approved, this workflow was implemented.
-* Data Schema | Logic | UI Schema
-------------- | ----- | ---------
+
+Col 1                | Col 2                | Col 3
+---------------------|----------------------|--------------------------
+![Geosampling data was initially collected via notebook.](noteBook1.jpg) | ![Simplied via pre-printed Field Data Book](noteBook2.jpg) | ![With labels for more accurate entry](noteBook3.jpg) | ![CSIROWireframe.pdf](CSIROWireframe.png)
+ Caption: Geosampling data was initially collected via notebook. | Combined image caption: CSIRO Researchers then moved to pre-printed field notebooks for more accurate data entry. | Caption: Imported into FAIMS Mobile. CSIRO workflow modeled in the generalised field recording app. Once approved, this workflow was implemented.
+
+
+
+Cell 4:    
+ 
+Data Schema | Logic | UI Schema
+----------- | ----- | ---------
 ![dataSchema.png](dataSchema.png) | ![uiLogic.png](uiLogic.png) | ![uiSchema.png](uiSchema.png)
-    * Caption: Available at https://github.com/FAIMS/CSIRO-Geochemistry-Sampling. These are the primary files which implement a scriptable model (data schema), view (ui schema), and controlller (ui logic) field data recording implementation. By scripting a field recording workflow, the app itself can function on supporting field recording in network-degraded environments, and individual "modules" (functioning sets of these scripts) can focus on implementing highly specific and customised workflows.
+
+     * Caption: Available at https://github.com/FAIMS/CSIRO-Geochemistry-Sampling. These are the primary files which implement a scriptable model (data schema), view (ui schema), and controlller (ui logic) field data recording implementation. By scripting a field recording workflow, the app itself can function on supporting field recording in network-degraded environments, and individual "modules" (functioning sets of these scripts) can focus on implementing highly specific and customised workflows.
+
+
+Cell 5:
+
+1 | 2 | 3
+----------- | ----- | ---------
+![1.png](app1.png) | ![2.png](app2.png) | ![3.png](app3.png)
+
+Caption: After extensive testing, an app was deployed.
+
+Cell 6:
+
+![field](establishingShot.jpg)
+Caption: Data was collected on multiple tablets in the field
+
+Cell 7: | Cell 8: | Cell 9:
+------------------------------
+![truck](faimsInTruck.jpg) | ![export](export.png) | no pic yet
+
+Caption: FAIMS is designed to work completely offline, allowing asynchronous work on multiple tablets with eventual sync. The server, here, was built into a portable UPS in the truck. | 
+Caption: After return to base, data exported (via customisable exporter) into shapefiles, a sqlite database, and CSVs. All pictures are renamed to the record they belong to and tagged with their record's meta-data. | ??
 
 
 
