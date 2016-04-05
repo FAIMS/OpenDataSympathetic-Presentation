@@ -1,0 +1,203 @@
+\startenvironment env_a0_poster
+%Context Environment for a basic Full Block Letter with Letterhead
+\enableregime [utf]
+\mainlanguage [en]
+\definepapersize[sheet][width=1920px, height=1440px]
+\setuppapersize[sheet][sheet]
+\setupexternalfigures[directory={img}]
+\usemodule[simplefonts]
+\setmainfont[Adventor][expansion=quality,protrusion=quality]
+\setupcolors[state=start]
+\setupcolor[hex]
+
+\definecolor[faimsblue][h=1B3E93]
+\definecolor[faimsorange][h=F68E1E]
+
+\setuplayout[location=middle,backspace=20px,  height=841px, width=1189px, topspace=250px, header=50px, footer=15px, bottomspace=10px]
+\setuppagenumbering [state=stop]
+
+
+
+
+\startluacode
+
+userdata = userdata or {}
+
+function userdata.makeqr(txt,ht)
+  foo = os.tmpname()..".png"
+  os.execute("qrencode "..txt.." -s 20 -d 600 -o " .. foo)
+
+  context.externalfigure(
+    {foo},{height=ht.."mm"})
+end 
+
+
+\stopluacode
+
+\def\makeqr#1[#2]%
+  {\ctxlua{userdata.makeqr([==[#1]==],[==[#2]==])}}
+
+\definelayer[footy]  % name of the layer
+    [x=0mm, y=265mm,  % from upper left corner of paper
+     width=\paperwidth, height=10mm] % let the layer cover the full paper
+
+
+\setupbackgrounds[page][background=footy, state=start]
+
+\setlayerframed[footy][frame=off, x=-1mm, y=-1mm, align=right, height=.2\pageheight, width=\pagewidth, background=color, backgroundcolor=faimsblue]
+  {}
+
+
+\setlayerframed[footy][frame=off, x=-1mm, y=.15\pageheight, align=right, height=.02\pageheight, width=\pagewidth, background=color, backgroundcolor=faimsorange, align=flushright, depth=10mm]
+  {}
+
+  %\setlayerframed[footy][frame=off, x=00mm, y=234mm, align=right, height=30mm, width=919mm, align=flushright]
+  %{\color[white]{\setupbodyfont[30pt]For More Information on this poster: }}
+
+  %\setlayerframed[footy][frame=off, x=00mm, y=184mm, align=right, height=75mm, width=970mm, align=flushright]
+  %{\externalfigure[fedarch.png][width=41mm]}
+
+
+\setlayerframed[footy][frame=off, x=.9\pagewidth, y=.15\pagewidth, height=27mm, width=140mm, align=center]
+  {\color[white]{\setupbodyfont[44pt]\setupwhitespace[none]www.faims.edu.au}
+    }
+
+\setlayerframed[footy][frame=off, x=1029mm, y=20mm, align=right, background=color, backgroundcolor=faimsblue, width=125mm, height=125mm]
+	{\externalfigure[faimsLogoNoBorder.pdf][ frame=off, type=pdf, width=140mm]{}}
+
+\setlayerframed[footy][frame=off, x=1029mm, y=55.4 mm, align=right, background=color, backgroundcolor=faimsblue, width=2mm, height=64.5mm]
+  {}
+
+\setlayerframed[footy][frame=off, x=989mm, y=177mm, align=right, background=color, width=40mm, height=40mm]
+  {\makeqr{http://www.fedarch.org}[35]{}}
+
+
+\setlayerframed[footy][frame=off, x=1029mm, y=204mm, width=200mm, align={stretch, verytolerant, hz, hanging},]
+  {\setupbodyfont[40pt]\setupinterlinespace[line=2ex]\sc\color[faimsblue]{
+
+
+
+
+
+
+
+\setvariables[namespace][blank=11mm]
+
+\ctxlua{a=140}
+
+\blank[\getvariable{namespace}{blank}]                
+\externalfigure[ARC_stacked.eps]
+                [width=\ctxlua{context((a*1).."mm")}]
+
+
+
+\blank[\getvariable{namespace}{blank}]                
+\externalfigure[MQ_INT_HOR_RGB_POS_Borderless.pdf]
+                [width=\ctxlua{context((a*1).."mm")}]
+\blank[\getvariable{namespace}{blank}]                
+\externalfigure[unswL.eps]
+                [width=\ctxlua{context((a*1).."mm")}]
+\blank[\getvariable{namespace}{blank}]                
+               \externalfigure[UQlogoC.eps]
+                [width=\ctxlua{context((a*.92).."mm")}]
+\blank[\getvariable{namespace}{blank}]                                   
+          \externalfigure[usyd.png]
+                [width=\ctxlua{context((a*.7).."mm")}]
+\blank[\getvariable{namespace}{blank}]                                    
+          \externalfigure[LaTrobe.png]
+                [width=\ctxlua{context((a*.9).."mm")}]
+\blank[\getvariable{namespace}{blank}]                                      
+          \externalfigure[flindersL.eps]
+                [width=\ctxlua{context((a*1).."mm")}]
+\blank[\getvariable{namespace}{blank}]                                       
+          \externalfigure[SCU-Logo.eps]
+                [width=\ctxlua{context((a*1).."mm")}]
+          
+
+
+
+
+\blank[15mm]
+\setvariables[namespace][ht2=60mm]
+\setupcombinations[location=middle, distance=20mm, after=]
+          \startcombination[2*3]          
+          {\externalfigure[nectar.eps]
+                [width=\getvariable{namespace}{ht2}]}{}
+          {\externalfigure[Intersect_Logo_CMKY.eps]
+                [width=\getvariable{namespace}{ht2}]}{}
+          {\externalfigure[tdar-logo.png]
+                [width=\getvariable{namespace}{ht2}]}{}
+          {\externalfigure[ChicagoSquare.eps]
+                [width=\getvariable{namespace}{ht2}]}{}
+          {\externalfigure[oclong.eps]
+                [width=\getvariable{namespace}{ht2}]}{}
+          {\externalfigure[ADSreversedLogoRed.eps]
+                [width=\getvariable{namespace}{ht2}]}{}
+          
+
+
+\stopcombination
+
+
+
+
+  }
+}
+
+
+
+
+\setlayerframed[footy]	% name of the layer
+    [frame=off]  % placement (from upper left corner of the layer)
+    {\framed[frame=off, topframe=off, width=\paperwidth, height=1080mm]{
+
+
+}}  % the actual contents of the layer
+
+\setupwhitespace[big]
+
+\placefigure[none, right, margin, top]{}{
+\framed[width=85mm, height=230mm, frame=off]{}
+}
+
+
+
+\setupheader[state=empty]
+
+
+\setupfooter[state=empty]
+
+
+
+
+\setupalign[hanging, hz]
+
+%% Titles!
+\unprotect
+\def\doctitle#1{\gdef\@title{#1}}
+\def\docversion#1{\gdef\@docver{#1}}
+\def\docdate#1{\gdef\@docdate{#1}}
+\docdate{\date}
+\docversion{1.0}
+
+\def\maketitle{%
+  %\startalignment[left]
+    \blank[force,2*big]
+      {\tfd \@title}
+    \blank[2*medium]
+      {\tfa \date[\@docdate][day,~,month,~,year]}
+    \blank
+      {\tfx \@docver}
+    \blank[3*medium]
+  %\stopalignment
+}
+\setupheadertexts[{\framed[frame=off, bottomframe=on, width=broad]{\tfx\sc\color[faimsblue]{\@title ~ || ~\@docver\hfill}}}]
+
+
+\protect
+
+
+
+
+\stopenvironment
+
