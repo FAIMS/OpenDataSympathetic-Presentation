@@ -33,7 +33,7 @@ Caption: Geosampling data was initially collected via notebook.
 
 ## Cell 2
 
-![Simplied via pre-printed Field Data Book](noteBook2.jpg) ![With labels for more accurate entry](noteBook3.jpg) 
+![Simplified via pre-printed Field Data Book](noteBook2.jpg) ![With labels for more accurate entry](noteBook3.jpg) 
 Combined image caption: CSIRO Researchers then moved to pre-printed field notebooks for more accurate data entry. 
 
 ## Cell 3
@@ -47,7 +47,7 @@ Data Schema | Logic | UI Schema |
 ----------- | ----- | --------- | 
 ![dataSchema.png](dataSchema.png) | ![uiLogic.png](uiLogic.png) | ![uiSchema.png](uiSchema.png) | 
 
- Caption: Available at https://github.com/FAIMS/CSIRO-Geochemistry-Sampling. These are the primary files which implement a scriptable model (data schema) | view (ui schema) | and controlller (ui logic) field data recording implementation. By scripting a field recording workflow, the app itself can function on supporting field recording in network-degraded environments, and individual "modules" (functioning sets of these scripts) can focus on implementing highly specific and customised workflows. | 
+ Caption: Available at https://github.com/FAIMS/CSIRO-Geochemistry-Sampling. These are the primary files which implement a scriptable model (data schema) | view (ui schema) | and controller (ui logic) field data recording implementation. By scripting a field recording workflow, the app itself can function on supporting field recording in network-degraded environments, and individual "modules" (functioning sets of these scripts) can focus on implementing highly specific and customised workflows. | 
 
 ## Cell 5
 
@@ -69,7 +69,7 @@ Caption: FAIMS is designed to work completely offline, allowing asynchronous wor
 ![export](export.png) | ![exportData](exportData.png)
 ----------------------|------------------------------
 
-Caption: After return to base, data exported (via customisable exporter) into shapefiles, a sqlite database, and CSVs. All pictures are renamed to the record they belong to and tagged with their record's meta-data. This exporter (https://github.com/FAIMS/shapefileExport) is also completely customisable, up to and including running arbitrary linux programs. This one uses imagemagick and mogrify to properly export photos as well as spatialite-tool to export shapefiles. 
+Caption: After return to base, data exported (via customisable exporter) into shapefiles, a sqlite database, and CSVs. All pictures are renamed to the record they belong to and tagged with their record's metadata. This exporter (https://github.com/FAIMS/shapefileExport) is also completely customisable, up to and including running arbitrary linux programs. This one uses imagemagick and mogrify to properly export photos as well as spatialite-tool to export shapefiles. 
 
 
 ## Bottom Discussion
@@ -93,19 +93,19 @@ The fundamental innovation of FAIMS Mobile is the domain-key normal form append 
 
 Records are defined in 3 logical tables. "Rows" are defined in the ArchEntity table, which also holds cruical GIS data. "Columns" are defined by the attribute and Ideal Entity tables. The Attribute table defines what attributes are possible, their names, and their list/export formats. The Ideal Entity table defines which attributes belong to which entity. By defining these tables in DML (data *manipulation* language) rather than DDL (Data *Definition* Language), the structure of the database remains consistent. This consistent structure allows for significant query reuse and allows us to dynamically script the fields of a workflow *after* all the fundamental data interactions of the app have been rewritten. 
 
-Each attribute has four sub-attributes reflecting the needs of field data recording and can be multi-valued if multiple rows *share* a timestamp. An attribute can comprise a set of: 
+Each attribute has four sub-attributes reflecting the needs of field data recording and can be multivalued if multiple rows *share* a timestamp. An attribute can comprise a set of: 
 * a constrained vocabulary (how we implement dropdowns, checkboxes, and radio buttons); 
 * a unconstrained measurement; 
-* an annotation (to represent a way of scribbling in the margins without contiminating the data); and 
+* an annotation (to represent a way of scribbling in the margins without contaminating the data); and 
 * a certainty (to reflect scribbling question marks or to otherwise rate physical uncertainty of the data reliability). 
 
-By combining these in a single "measurment." Highly nuanced but *machine readable* data can be recorded in such a way as to fit the needs of the recording workflow.
+By combining these in a single "measurement." Highly nuanced but *machine readable* data can be recorded in such a way as to fit the needs of the recording workflow.
 
 ### Append only design
 
 ![history](eventLog.png)
 
-This domain-key structure is also necessary to support the append only design. As each "event" (insertion, updates, "deletion") occupies its own row, we use GROUP BY and HAVING max(timestamp) to emit the latest versions of each attribute. Event uniqueness is guarenteed by UUID (user creation + time of creation due to the length limits of integers as primary keys in Sqlite), acting userid, and time of event. Therefore, by virtue of the need of having "eventually consistent" datastores, we also have a complete action log for every record: it shows when each attribute was edited and by whom. This allows granular control and review of records, as individual attributes can be "rolled back" to a more authoritative/correct state by users on the server. 
+This domain-key structure is also necessary to support the append only design. As each "event" (insertion, updates, "deletion") occupies its own row, we use GROUP BY and HAVING max(timestamp) to emit the latest versions of each attribute. Event uniqueness is guaranteed by UUID (user creation + time of creation due to the length limits of integers as primary keys in Sqlite), acting userid, and time of event. Therefore, by virtue of the need of having "eventually consistent" data stores, we also have a complete action log for every record: it shows when each attribute was edited and by whom. This allows granular control and review of records, as individual attributes can be "rolled back" to a more authoritative/correct state by users on the server. 
 
 The append-only design also protects against data-loss, as "deletions" are merely a flag on the record which hides it from normal view. Thus, this database is designed to preserve user actions at all costs, allowing differences in datastores to be sent to the server and thereby distributed to all devices. This also has the virtue, so long as devices sync relatively often, of creating a complete backup of the datastore on every device, further armouring the database against mischance.
 
@@ -133,3 +133,5 @@ Choices of the fundamental libraries were made in 2012, when the project was com
 # Faims internal architecture
 
 # OSS Heritage graph
+
+
