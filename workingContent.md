@@ -25,9 +25,9 @@ This poster will describe the internal architecture of the FAIMS app, show how i
 Intent of slide: captioned visual narrative. This slide can be used to describe the complete workflow of module history, generation, and use
 
 Grid of pictures: 
-* [!Geosampling data was initially collected via notebook.](noteBook1.jpg)
-* [!Simplied via pre-printed Field Data Book](noteBook2.jpg)
-* [!With labels for more accurate entry](noteBook3.jpg)
+* ![Geosampling data was initially collected via notebook.](noteBook1.jpg)
+* ![Simplied via pre-printed Field Data Book](noteBook2.jpg)
+* ![With labels for more accurate entry](noteBook3.jpg)
 
 
 Paper notes: 
