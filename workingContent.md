@@ -89,7 +89,7 @@ The fundamental innovation of FAIMS Mobile is the domain-key normal form append 
 
 ### DKNF Design
 
-![dknf][dknf.png] (Image by Geoff Matheson).
+![dknf](dknf.png) (Image by Geoff Matheson).
 
 Records are defined in 3 logical tables. "Rows" are defined in the ArchEntity table, which also holds cruical GIS data. "Columns" are defined by the attribute and Ideal Entity tables. The Attribute table defines what attributes are possible, their names, and their list/export formats. The Ideal Entity table defines which attributes belong to which entity. By defining these tables in DML (data *manipulation* language) rather than DDL (Data *Definition* Language), the structure of the database remains consistent. This consistent structure allows for significant query reuse and allows us to dynamically script the fields of a workflow *after* all the fundamental data interactions of the app have been rewritten. 
 
@@ -111,7 +111,7 @@ The append-only design also protects against data-loss, as "deletions" are merel
 
 ## OSS Heritage
 
-![chart][test.png]
+![chart](test.png)
 
 The FAIMS Mobile app stands on the shoulders of giants. The only way an app this complex would be possible would be via the contributions of many open source projects -- which is one of the primary reasons why our own work is released under the GPLv3. Crucial technologies include: 
 
