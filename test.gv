@@ -1,0 +1,37 @@
+digraph g {
+
+GIS [label="GIS Database on Android"];
+Grammar [label="Grammar parser"];
+Mobile [label="FAIMS Mobile"];
+filechooser [label="Android Filechooser app"];
+qr [label="Android QR scanner"];
+many [label="Many Ruby libraries"];
+
+GDAL -> Spatialite;
+OsGEO -> Spatialite;
+PROJ4 -> Spatialite;
+
+Spatialite -> GIS;
+Sqlite -> GIS ;
+many -> Ruby;
+Antlr3 -> Grammar;
+Linux -> Server;
+Apache -> Server;
+Ruby -> Server;
+Sqlite -> Server;
+
+GIS -> Nutiteq;
+Nutiteq -> Mobile;
+Grammar -> Server;
+Grammar -> Mobile;
+
+JavaRosa -> Mobile;
+BeanShell -> Mobile;
+NativeCSS -> Mobile;
+kXML2 -> Mobile;
+filechooser -> Mobile;
+qr -> Mobile;
+
+
+
+}
