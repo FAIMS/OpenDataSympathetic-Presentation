@@ -67,6 +67,8 @@ Caption: FAIMS is designed to work completely offline, allowing asynchronous wor
 
 ## Cell 8
 ![export](export.png) | ![exportData](exportData.png)
+----------------------|------------------------------
+
 Caption: After return to base, data exported (via customisable exporter) into shapefiles, a sqlite database, and CSVs. All pictures are renamed to the record they belong to and tagged with their record's meta-data. This exporter (https://github.com/FAIMS/shapefileExport) is also completely customisable, up to and including running arbitrary linux programs. This one uses imagemagick and mogrify to properly export photos as well as spatialite-tool to export shapefiles. 
 
 
