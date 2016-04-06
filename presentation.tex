@@ -1,14 +1,20 @@
 \environment envpresentation
-%\usemodule[pre-original]
 
-\setupheadertexts[{\color[black]{\tfxx \midaligned{\rlap{\currentdate} \hfill Using the FAIMS Mobile App for field data recording \hfill \llap{Brian Ballsun-Stanton, Jens Klump, Shawn Ross}}}}]
-\setupheader[state=start]
+\setlayerframed[footy][frame=off, x=.895\pagewidth, y=.005\pageheight, align=right]
+  {\externalfigure[faimsLogo.pdf][ frame=off, type=pdf, width=.1\pagewidth]{}}
+
+  
+%\usemodule[pre-original]
+\doctitle{Using the FAIMS Mobile App for field data recording}
+\docauthor{Brian Ballsun-Stanton, Jens Klump, Shawn Ross}
+%\setupheadertexts[{\color[black]{\tfxx \midaligned{\rlap{\currentdate} \hfill Using the FAIMS Mobile App for field data recording \hfill \llap{Brian Ballsun-Stanton, Jens Klump, Shawn Ross}}}}]
+%\setupheader[state=start]
 
 
 \starttext
 
-
-\chapter{Data Recording}
+\maketitle
+\section{Data Recording}
 \setupTABLE[rulethickness=0pt, margindistance=12pt]
 \bTABLE[option=stretch]
 \bTR 
