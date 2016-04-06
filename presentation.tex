@@ -1,109 +1,97 @@
 \environment envpresentation
 
-\setlayerframed[footy][frame=off, x=.895\pagewidth, y=.005\pageheight, align=right]
-  {\externalfigure[faimsLogo.pdf][ frame=off, type=pdf, width=.1\pagewidth]{}}
 
-  
-%\usemodule[pre-original]
-\doctitle{Using the FAIMS Mobile App for field data recording}
-\docauthor{Brian Ballsun-Stanton, Jens Klump, Shawn Ross}
-%\setupheadertexts[{\color[black]{\tfxx \midaligned{\rlap{\currentdate} \hfill Using the FAIMS Mobile App for field data recording \hfill \llap{Brian Ballsun-Stanton, Jens Klump, Shawn Ross}}}}]
-%\setupheader[state=start]
+\setlayerframed[footy][frame=off, x=.01\pagewidth, y=.015\pageheight, align=flushleft, width=.75\pagewidth]%
+{\color[white]{\setupbodyfont[90pt]\setupinterlinespace[line=0pt]\setupwhitespace[none]Using the FAIMS Mobile App for Field Data Recording}}
 
 
+\setlayerframed[footy][frame=off, x=.01\pagewidth, y=.1465\pageheight, align=center]%
+{\color[white]{\setupbodyfont[28pt]\setupinterlinespace[line=0pt]\setupwhitespace[none]Brian Ballsun-Stanton (Macquarie University), Jens Klump (CSIRO), Shawn Ross (Macquarie University)}}
+
+
+\definebar[a][color=blue]
 \starttext
 
-\maketitle
-\section{Data Recording}
-\setupTABLE[rulethickness=0pt, margindistance=12pt]
-\bTABLE[option=stretch]
-\bTR 
-	\bTD[nc=3] \externalfigure[noteBook1.jpg][width=.2\textwidth] \eTD 
-	\bTD[nc=2] \externalfigure[noteBook2.jpg][width=.1\textwidth] \eTD
-	\bTD \externalfigure[noteBook3.jpg][width=.1\textwidth] \eTD 
-	\bTD[nc=3] \externalfigure[CSIROWireframe.png][width=.2\textwidth] \eTD
-		\bTD \externalfigure[dataSchema.png][width=.1\textwidth] \eTD 
-		\bTD \externalfigure[uiLogic.png][width=.1\textwidth] \eTD 
-		\bTD \externalfigure[uiSchema.png][width=.1\textwidth] \eTD 
-\eTR
-\bTR 
-	\bTD[nc=3] Geosampling data was initially collected via notebook. \eTD 
-	\bTD[nc=3] CSIRO Researchers then moved to pre-printed field notebooks for more accurate data entry.  \eTD 
-	\bTD[nc=3] Imported into FAIMS Mobile. CSIRO workflow modeled in the generalised field recording app. Once approved, this workflow was implemented. \eTD 
-	\bTD[nc=3] Available at https://github.com/FAIMS/CSIRO-Geochemistry-Sampling. These are the primary files which implement a scriptable model (data schema) view (ui schema) and controller (ui logic) field data recording implementation. By scripting a field recording workflow, the app itself can function on supporting field recording in network-degraded environments, and individual \quote{modules} (functioning sets of these scripts) can focus on implementing highly specific and customised workflows. \eTD
-\eTR
-\bTR 
-	\bTD \externalfigure[app1.png][width=.1\textwidth] \eTD 
-	\bTD \externalfigure[app2.png][width=.1\textwidth] \eTD 
-	\bTD \externalfigure[app3.png][width=.1\textwidth] \eTD 
-	\bTD[nc=3] \externalfigure[establishingShot.jpg][width=.1\textwidth] \eTD
-	\bTD[nc=3] \externalfigure[faimsInTruck.jpg][width=.1\textwidth] \eTD
-	\bTD \externalfigure[export.png][width=.1\textwidth] \eTD
-	\bTD[nc=2] \externalfigure[exportData.png][width=.1\textwidth] \eTD
+\setuplist
+    [section]
+    [alternative=e, color=blue, style={\tfc}, prefix=yes, width={\textwidth}]
 
-\eTR
-\bTR
-	\bTD[nc=3] After extensive testing, an app was deployed. These are three screens, designated by the wireframe and scripted by the files before. \eTD
-	\bTD[nc=3] Data was collected on multiple tablets in the field \eTD
-	\bTD[nc=3] FAIMS is designed to work completely offline, allowing asynchronous work on multiple tablets with eventual sync. The server, here, was built into a portable UPS in the truck. \eTD
-	\bTD[nc=3] After return to base, data exported (via customisable exporter) into shapefiles, a sqlite database, and CSVs. All pictures are renamed to the record they belong to and tagged with their record's metadata. This exporter (https://github.com/FAIMS/shapefileExport) is also completely customisable, up to and including running arbitrary linux programs. This one uses imagemagick and mogrify to properly export photos as well as spatialite-tool to export shapefiles. \eTD
-\eTR	
-\eTABLE
+{\tfd Quick Navigation:}
+
+\placecontent
+\vfill
+
+Abstract:
+
+{\setupbodyfont[14pt]\setupwhitespace[small]Multiple people creating data in the field poses a hard technical problem: our \quote{web 2.0} environment presumes constant connectivity, data \quote{authority} held by centralised servers, and sees mobile devices as tools for presentation rather than tools for origination. A particular design challenge is the remoteness of the sampling locations, hundreds of kilometres away from network access. The alternative, however, is hand collection with a lengthy, error prone, and expensive digitisation process.
+
+This poster will present a field-tested\footnote{See chapter by Sobotkova et. al. in forthcoming book Mobilizing the Past due out at the end of 2016} open-source solution to field data recording. This solution, originally created by a community of archaeologists, needed to accommodate diverse recording methodologies. The community could not agree on standard vocabularies, workflows, attributes, or methodologies, but most agreed that \quote{recording data in the field} was a desireable app to have. As a result, the app is generalised for field data collection; not only can it record a range of data types, but it is deeply customisable.
+
+The NeCTAR funded FAIMS Project, therefore, created an app which allows for arbitrary data collection in the field\footnote{Ross, S., et. al. (2015). Building the bazaar: enhancing archaeological field recording through an open source approach. In Wilson, A. T., Edwards, B. (Eds.). Open Source Archaeology: Ethics and Practice. Walter de Gruyter GmbH Co KG.}. In order to accomplish this ambitious goal, FAIMS relied heavily on OSS projects including: spatialite and gdal (for GIS support), sqlite (for a lightweight key-attribute-value datastore), Javarosa and Beanshell (for UI and scripting), and the entire linux stack plus ruby for a server.
+
+Only by standing on the shoulders of giants, FAIMS was able to make a flexible and highly generalisable field data collection system that CSIRO geoscientists were able to customise to suit most of their completely unanticipated needs\footnote{Reid, N., et. al. (2015) A mobile app for geochemical field data acquisition. Poster session presented at the meeting of AGU Fall Meeting, San Francisco}. While single-task apps (i.e. those commissioned by structural geologists to take strikes and dips) will excel in their domains, other geoscientists (palaeoecologists, palaeontologists, anyone taking samples), likely cannot afford to commission domain- and methodology- specific recording tools for their custom recording needs. FAIMS shows the utility of OSS software development and provides geoscientists a way forward for edge-case field data collection. Moreover, as the data is completely open and exports are scriptable, federation with other data formats is both encouraged and possible.
+
+This poster will describe the internal architecture of the FAIMS app, show how it was used by CSIRO in the field, and display a graph of its OSS heritage. Code for this module is available at: https://github.com/FAIMS/CSIRO-Geochemistry-Sampling. The module can be explored by downloading FAIMS from google play and downloading the *CSIRO Geochemical Sample Collection - Sydney Maps* module from the demo server. A getting started guide is available at: http://faims.edu.au
+
+Source code for this presentation (compiled in \ConTeXt)~is available at: https://github.com/FAIMS/EGU2016-Presentation
+}
+
+\section{Developing a multi-device field recording system}
+\setupcombinations[distance=10px, width=\textwidth, align=flushleft]
+\startcombination[4*2] 
+{\externalfigure[noteBook1.jpg][width=.2\textwidth]}{Geosampling data was initially collected via notebook.}
+{\externalfigure[noteBook2.jpg][width=.1\textwidth]\externalfigure[noteBook3.jpg][width=.1\textwidth]}{CSIRO Researchers then moved to pre-printed field notebooks for more accurate data entry. }
+{\externalfigure[CSIROWireframe.png][width=.2\textwidth]}{Imported into FAIMS Mobile, the CSIRO workflow was modeled in the generalised field recording app.}
+{\setupcombinations[distance=5px, width=fit]
+
+\startcombination[2*2]
+{\externalfigure[dataSchema.png][width=.1\textwidth]}{Data Schema (XML)}
+{\externalfigure[uiLogic.png][width=.1\textwidth]}{Logic (Beanshell)}
+{\externalfigure[uiSchema.png][width=.1\textwidth]}{UI Schema (XML)}
+\stopcombination}
+{These are the primary files which implement a scriptable model, view, and controller field data recording implementation.}
+%nextrow
+{\externalfigure[app2.png][width=.09\textwidth] \externalfigure[app3.png][width=.09\textwidth]}{After extensive testing, an app was deployed. These are three screens, designated by the wireframe and scripted by the files before.}
+{\externalfigure[establishingShot.jpg][width=.2\textwidth]}{Data was collected on multiple tablets in the field. These tablets were offline to save battery.}
+{\externalfigure[faimsInTruck.jpg][width=.2\textwidth]}{FAIMS is designed to work completely offline, allowing asynchronous work on multiple tablets with eventual sync. The server, here, was built into a portable UPS in the truck.}
+{\externalfigure[exportData.png][width=.2\textwidth]}{After return to base, data exported (via customisable exporter) into shapefiles, a sqlite database, and CSVs. All pictures are renamed to the record they belong to and tagged with their record's metadata.}
+\stopcombination
+
+
+
+\section{Details of FAIMS}
+\setupcombinations[distance=10px, width=\textwidth, align=flushleft]
+
+\startcombination[2*1]
+{\externalfigure[dknf.png][width=.5\textwidth]}{
+Records are defined in 3 logical tables\footnote. \quote{Rows} are defined in the ArchEntity table, which also holds cruical GIS data. \quote{Columns} are defined by the attribute and Ideal Entity tables. The Attribute table defines what attributes are possible, their names, and their list/export formats. The Ideal Entity table defines which attributes belong to which entity. By defining these tables in DML (Data {\em Manipulation} Language) rather than DDL (Data {\em Definition} Language), the structure of the database remains consistent. This consistent structure allows for significant query reuse and allows us to dynamically script the fields of a workflow {\em after} all the fundamental data interactions of the app have been rewritten.
+
+\vfill
+\vfill
+{\tfx Image by Geoff Matheson.}
+
+}
+{\externalfigure[test.png][width=.45\textwidth]}{ 
+The only way an app this complex would be possible would be via the contributions of many open source projects: 
+\startitemize[joinedup, packed]
+\item JavaRosa which allows us to parse XML into native android elements;
+\item NativeCSS which allows us to include some runtime stylings for elements;
+\item BeanShell which allows us to dynamically include a java-like scripting language;
+\item Spatialite which allows GIS operations inside the database;
+\item Sqlite which is a supremely stable single-user database;
+\item Ruby, Apache, Linux which allows us to write a sophisticated server running on a completely open source stack.
+\stopitemize
+}
+\stopcombination
+
+
+
+\section{CSIRO Workflow}
 
 FAIMS Mobile is a FOSS Software platform (comprising an android client and ruby server on ubuntu) funded by the Australian Research Council designed to provide a means of collecting rich, geospatial, and multi-media field data on multiple tablets with no network connectivity in the middle of nowhere. While originally intended to support archaeologists, FAIMS Mobile provided a sufficiently general field recording framework to allow for geochemical and biological sampling by multiple teams of CSIRO researchers.
-
-Code for this module is available at: https://github.com/FAIMS/CSIRO-Geochemistry-Sampling. The module can be explored by downloading FAIMS from google play and downloading the *CSIRO Geochemical Sample Collection - Sydney Maps* module from the demo server. A getting started guide is available at: http://faims.edu.au
-
-\chapter{Details of FAIMS}
-
- Internal Infrastructure
-
-The fundamental innovation of FAIMS Mobile is the domain-key normal form append only datastore. Each record is identified by two naturally-unique identifiers: the user and the time of creation. Beyond that, every action is timestamped to allow for full histories and audit trails. Because every record and every action is timestamped and unique to a user, we can combine different versions of the database (i.e. those created on multiple devices over a week's trek through the Australian Outback) without any risk of clobbering edits or data. The most recent activity is \quote{true} and instances where multiple users edited the same data at the same time are flagged for human review.
-
- DKNF Design
-
-![dknf](dknf.png) (Image by Geoff Matheson).
-
-Records are defined in 3 logical tables. \quote{Rows} are defined in the ArchEntity table, which also holds cruical GIS data. \quote{Columns} are defined by the attribute and Ideal Entity tables. The Attribute table defines what attributes are possible, their names, and their list/export formats. The Ideal Entity table defines which attributes belong to which entity. By defining these tables in DML (data *manipulation* language) rather than DDL (Data *Definition* Language), the structure of the database remains consistent. This consistent structure allows for significant query reuse and allows us to dynamically script the fields of a workflow *after* all the fundamental data interactions of the app have been rewritten. 
-
-Each attribute has four sub-attributes reflecting the needs of field data recording and can be multivalued if multiple rows *share* a timestamp. An attribute can comprise a set of: 
-* a constrained vocabulary (how we implement dropdowns, checkboxes, and radio buttons); 
-* a unconstrained measurement; 
-* an annotation (to represent a way of scribbling in the margins without contaminating the data); and 
-* a certainty (to reflect scribbling question marks or to otherwise rate physical uncertainty of the data reliability). 
-
-By combining these in a single \quote{measurement}. Highly nuanced but *machine readable* data can be recorded in such a way as to fit the needs of the recording workflow.
-
- Append only design
-
-![history](eventLog.png)
-
-This domain-key structure is also necessary to support the append only design. As each \quote{event} (insertion, updates, \quote{deletion}) occupies its own row, we use GROUP BY and HAVING max(timestamp) to emit the latest versions of each attribute. Event uniqueness is guaranteed by UUID (user creation + time of creation due to the length limits of integers as primary keys in Sqlite), acting userid, and time of event. Therefore, by virtue of the need of having \quote{eventually consistent} data stores, we also have a complete action log for every record: it shows when each attribute was edited and by whom. This allows granular control and review of records, as individual attributes can be \quote{rolled back} to a more authoritative/correct state by users on the server. 
-
-The append-only design also protects against data-loss, as \quote{deletions}" are merely a flag on the record which hides it from normal view. Thus, this database is designed to preserve user actions at all costs, allowing differences in datastores to be sent to the server and thereby distributed to all devices. This also has the virtue, so long as devices sync relatively often, of creating a complete backup of the datastore on every device, further armouring the database against mischance.
-
- OSS Heritage
-
-![chart](test.png)
-
-The FAIMS Mobile app stands on the shoulders of giants. The only way an app this complex would be possible would be via the contributions of many open source projects -- which is one of the primary reasons why our own work is released under the GPLv3. Crucial technologies include: 
-
-* JavaRosa which allows us to parse XML into native android widgets, allowing us to avoid the overheads of html webviews for every single dynamic component. 
-* NativeCSS which allows us to include some stylings for elements, defined at module load, rather than at compile;
-* BeanShell which allows us to dynamically include a java-like scripting language, to allow for runtime logic changes.
-* Antlr3 which allows for highly sophisticated parsing of strings, allowing for highly customisable record identifiers;
-* Spatialite which allows GIS operations inside the database.
-* Sqlite which is a supremely stable single-user database, which is perfect for offline operation
-* Ruby, Apache, Linux which allows us to write a sophisticated server running on a completely open source stack.
-
-Choices of the fundamental libraries were made in 2012, when the project was commissioned as part of NeCTAR (National eResearch Collaboration Tools and Resources project) eResearch tools initiative and the libraries remain solid (if slower than some newer iterations) for the next few years to come. 
-
-
-
-\chapter{CSIRO Workflow}
-\chapter{Module Details}
-\chapter{Faims internal architecture}
-\chapter{OSS Heritage graph}
+\section{Module Details}
+\section{Faims internal architecture}
+\section{OSS Heritage graph}
 
 
 

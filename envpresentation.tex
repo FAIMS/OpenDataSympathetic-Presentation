@@ -1,4 +1,4 @@
-\startenvironment env_a0_poster
+\startenvironment envpresentation
 %Context Environment for a basic Full Block Letter with Letterhead
 \enableregime [utf]
 \mainlanguage [en]
@@ -10,15 +10,25 @@
 \usemodule[simplefonts]
 \setmainfont[Adventor][expansion=quality,protrusion=quality]
 \setupcolors[state=start]
+\setupinteraction[state=start, color=blue, contrastcolor=blue]
+
 
 \definecolor[faimsblue][h=1B3E93]
 \definecolor[faimsorange][h=F68E1E]
 
-\setuplayout[location=middle,backspace=20px,  height=841px, width=1189px, topspace=250px, header=50px, footer=15px, bottomspace=10px]
-\setuppagenumbering [state=stop]
+\setuplayout[
+    backspace=.01\pagewidth,
+    header=0pt,
+    footer=.02\pageheight,
+    topspace=.185\pageheight,
+    cutspace-.1\pagewidth,
+    width=.87\pagewidth,
+    height=.798\pageheight
+    ]
 
 
-
+\setuppagenumbering[location=]
+%\showframe
 
 \startluacode
 
@@ -40,10 +50,10 @@ end
 
 \definelayer[footy]  % name of the layer
     [x=0mm, y=265mm,  % from upper left corner of paper
-     width=\paperwidth, height=10mm] % let the layer cover the full paper
+     width=\paperwidth, height=10mm, state=repeat] % let the layer cover the full paper
 
 
-\setupbackgrounds[page][background=footy, state=start]
+\setupbackgrounds[page][background=footy, state=repeat]
 
 \setlayerframed[footy][frame=off, x=0mm, y=0mm, align=right, height=.175\pageheight, width=\pagewidth, background=color, backgroundcolor=faimsblue]{}
 
@@ -61,13 +71,22 @@ end
   {\color[white]{\setupbodyfont[21pt]\setupwhitespace[none]www.faims.edu.au}
     }
 
+\setlayerframed[footy][frame=off, x=.85\pagewidth, y=.1475\pageheight, align=center]
+  {\color[white]{\setupbodyfont[21pt]\setupwhitespace[none]\externalfigure[by-sa.eps][ frame=off, type=pdf, height=.019\pageheight]{}}
+    }
+
+
 \setlayerframed[footy][frame=off, x=.895\pagewidth, y=.005\pageheight, align=right]
   {\externalfigure[faimsLogo.pdf][ frame=off, type=pdf, width=.1\pagewidth]{}}
 
-%\setlayerframed[footy][frame=off, x=1029mm, y=55.4 mm, align=right, background=color, backgroundcolor=faimsblue, width=2mm, height=64.5mm]{}
 
-\setlayerframed[footy][frame=off, x=.895\pagewidth, y=.16\pageheight, align={stretch, verytolerant, hz, hanging},]
-  {\setupbodyfont[40pt]\setupinterlinespace[line=2ex]\sc\color[faimsblue]{
+\setlayerframed[footy][frame=off, x=.895\pagewidth, y=.18\pageheight, align=right]
+  {\externalfigure[CSIRO_original.jpg][ frame=off, type=pdf, width=.1\pagewidth]{}}
+
+\setlayerframed[footy][frame=off, x=.893\pagewidth, y=.0399\pageheight, align=right, background=color, backgroundcolor=faimsblue, width=10px, height=.0605\pageheight]{}
+
+\setlayerframed[footy][frame=off, x=.895\pagewidth, y=.28\pageheight, align={stretch, verytolerant, hz, hanging},]
+  {\setupbodyfont[16pt]\setupinterlinespace[line=2ex]\sc\color[faimsblue]{
 
 
 
@@ -75,7 +94,7 @@ end
 
 
 
-\setvariables[namespace][blank=.01\pagewidth]
+\setvariables[namespace][blank=.015\pagewidth]
 
 
 
@@ -83,9 +102,12 @@ end
 \externalfigure[ARC_stacked.eps]
                 [width=.1\pagewidth]
 
+\blank[.005\pagewidth]                
+
+LIEF Award: \hfill LE140100151
 
 
-\blank[\getvariable{namespace}{blank}]                
+\blank[.02\pagewidth]                
 \externalfigure[MQ_INT_HOR_RGB_POS_Borderless.pdf]
                 [width=.1\pagewidth]
 \blank[\getvariable{namespace}{blank}]                
@@ -112,46 +134,45 @@ end
 
 
 \blank[\getvariable{namespace}{blank}]                                       
-\setvariables[namespace][ht2=.06\pagewidth]
-\externalfigure[nectar.eps]
-      [width=\getvariable{namespace}{ht2}]
-\blank[\getvariable{namespace}{blank}]                                       
+\setvariables[namespace][ht2=.045\pagewidth]
+%\externalfigure[nectar.eps]
+%      [width=\getvariable{namespace}{ht2}]
+%\blank[\getvariable{namespace}{blank}]                                       
+%
+%\externalfigure[Intersect_Logo_CMKY.eps]
+%      [width=\getvariable{namespace}{ht2}]
+%\blank[\getvariable{namespace}{blank}]                                       
+%
+%\externalfigure[tdar-logo.png]
+%      [width=\getvariable{namespace}{ht2}]
+%\blank[\getvariable{namespace}{blank}]                                       
+%
+%\externalfigure[ChicagoSquare.eps]
+%      [width=\getvariable{namespace}{ht2}]
+%\blank[\getvariable{namespace}{blank}]                                       
+%
+%\externalfigure[oclong.eps]
+%      [width=\getvariable{namespace}{ht2}]
+%\blank[\getvariable{namespace}{blank}]                                       
+%
+%\externalfigure[ADSreversedLogoRed.eps]
+%      [width=\getvariable{namespace}{ht2}]
 
-\externalfigure[Intersect_Logo_CMKY.eps]
-      [width=\getvariable{namespace}{ht2}]
-\blank[\getvariable{namespace}{blank}]                                       
-
-\externalfigure[tdar-logo.png]
-      [width=\getvariable{namespace}{ht2}]
-\blank[\getvariable{namespace}{blank}]                                       
-
-\externalfigure[ChicagoSquare.eps]
-      [width=\getvariable{namespace}{ht2}]
-\blank[\getvariable{namespace}{blank}]                                       
-
-\externalfigure[oclong.eps]
-      [width=\getvariable{namespace}{ht2}]
-\blank[\getvariable{namespace}{blank}]                                       
-
-\externalfigure[ADSreversedLogoRed.eps]
-      [width=\getvariable{namespace}{ht2}]
-
-
-%\setupcombinations[location=middle, distance=.01\pagewidth, after=]
-%          \startcombination[2*3]          
-%          {\externalfigure[nectar.eps]
-%                [width=\getvariable{namespace}{ht2}]}{}
-%          {\externalfigure[Intersect_Logo_CMKY.eps]
-%                [width=\getvariable{namespace}{ht2}]}{}
-%          {\externalfigure[tdar-logo.png]
-%                [width=\getvariable{namespace}{ht2}]}{}
-%          {\externalfigure[ChicagoSquare.eps]
-%                [width=\getvariable{namespace}{ht2}]}{}
-%          {\externalfigure[oclong.eps]
-%                [width=\getvariable{namespace}{ht2}]}{}
-%          {\externalfigure[ADSreversedLogoRed.eps]
-%                [width=\getvariable{namespace}{ht2}]}{}
-%\stopcombination
+\setupcombinations[location=middle, distance=.01\pagewidth, after=]
+          \startcombination[2*3]          
+          {\externalfigure[nectar.eps]
+                [width=\getvariable{namespace}{ht2}]}{}
+          {\externalfigure[Intersect_Logo_CMKY.eps]
+                [width=\getvariable{namespace}{ht2}]}{}
+          {\externalfigure[tdar-logo.png]
+                [width=\getvariable{namespace}{ht2}]}{}
+          {\externalfigure[ChicagoSquare.eps]
+                [width=\getvariable{namespace}{ht2}]}{}
+          {\externalfigure[oclong.eps]
+                [width=\getvariable{namespace}{ht2}]}{}
+          {\externalfigure[ADSreversedLogoRed.eps]
+                [width=\getvariable{namespace}{ht2}]}{}
+\stopcombination
 
 
 
@@ -177,10 +198,6 @@ end
 
 
 
-\setupheader[state=empty]
-
-
-\setupfooter[state=empty]
 
 
 
@@ -207,13 +224,25 @@ end
     \blank[3*medium]
   %\stopalignment
 }
-\setupheadertexts[{\framed[frame=off, bottomframe=on, width=broad]{\tfx\sc\color[faimsblue]{\@title ~ || ~\@docver\hfill}}}]
 
 
 \protect
+\startsetups[doc:footer]
+{~\hfill \llap{Slide: \pagenumber/\lastpagenumber~}}
+\stopsetups
+
+% Use the setup
+\setupfootertexts[\setup{doc:header}]
+
+%\usemodule[pre-original]
+%\setupheadertexts[{\color[black]{\tfxx \midaligned{\rlap{\currentdate} \hfill Using the FAIMS Mobile App for field data recording \hfill \llap{Brian Ballsun-Stanton, Jens Klump, Shawn Ross}}}}]
+%\setupheader[state=start]
+
+\setuphead[section][placehead=yes, page=yes, number=no, align=middle, style={\setupbodyfont[60pt]}]
+\setuphead[subsection][number=no]
 
 
-
+\setupbodyfont[20pt]
 
 \stopenvironment
 
