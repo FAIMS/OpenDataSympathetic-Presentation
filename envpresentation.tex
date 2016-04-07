@@ -10,7 +10,6 @@
 \usemodule[simplefonts]
 \setmainfont[Adventor][expansion=quality,protrusion=quality]
 \setupcolors[state=start]
-\setupinteraction[state=start, color=blue, contrastcolor=blue]
 
 
 \definecolor[faimsblue][h=1B3E93]
@@ -23,7 +22,9 @@
     topspace=.185\pageheight,
     cutspace-.1\pagewidth,
     width=.87\pagewidth,
-    height=.798\pageheight
+    height=.798\pageheight,
+    bottomspace=.8cm,
+    bottom=12pt   
     ]
 
 
@@ -241,6 +242,23 @@ LIEF Award: \hfill LE140100151
 \setuphead[section][placehead=yes, page=yes, number=no, align=middle, style={\setupbodyfont[60pt]}]
 \setuphead[subsection][number=no]
 
+
+\setupinteraction
+  [page=yes,
+   color=faimsblue,
+   contrastcolor=faimsorange,
+   menu=on,
+   state=start]
+
+\setupsubpagenumber
+  [way=bytext,
+   state=start]
+
+
+\startinteractionmenu[bottom]
+
+{\interactionbar[alternative=f,width=\makeupwidth,height=1ex]}
+\stopinteractionmenu
 
 \setupbodyfont[20pt]
 
