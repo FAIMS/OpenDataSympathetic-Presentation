@@ -5,7 +5,7 @@ Grammar [label="Grammar parser"];
 Mobile [label="FAIMS Mobile"];
 filechooser [label="Android Filechooser app"];
 qr [label="Android QR scanner"];
-many [label="Many Ruby libraries"];
+Ruby [label="Ruby and many OSS libraries"];
 
 GDAL -> Spatialite;
 OsGEO -> Spatialite;
@@ -13,7 +13,6 @@ PROJ4 -> Spatialite;
 
 Spatialite -> GIS;
 Sqlite -> GIS ;
-many -> Ruby;
 Antlr3 -> Grammar;
 Linux -> Server;
 Apache -> Server;
