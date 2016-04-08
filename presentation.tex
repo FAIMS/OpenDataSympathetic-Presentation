@@ -50,15 +50,14 @@ Records are defined in 3 logical tables\footnote. \quote{Rows} are defined in th
 
 }
 {\externalfigure[oss.pdf][width=.49\textwidth]}{ 
-The only way an app this complex would be possible would be via the contributions of many open source projects: 
+The three {\em sine qua non} FOSS libraries without which this project could not exist are:
 \startitemize[joinedup, packed]
 \item JavaRosa which allows us to parse XML into native android elements;
-\item NativeCSS which allows us to include some runtime stylings for elements;
-\item BeanShell which allows us to dynamically include a java-like scripting language;
-\item Spatialite which allows GIS operations inside the database;
+\item BeanShell which allows us to include a java-like scripting language;
 \item Sqlite which is a supremely stable single-user database;
-\item Ruby, Apache, Linux which allows us to write a sophisticated server running on a completely open source stack.
 \stopitemize
+
+By relying on stable, free, and public code we did not have to reinvent the wheel. We could, instead, focus on implementing our data schema and the novel features required by our environment.
 }
 \stopcombination
 \page
