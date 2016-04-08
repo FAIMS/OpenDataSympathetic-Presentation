@@ -2,7 +2,7 @@
 %Context Environment for a basic Full Block Letter with Letterhead
 \enableregime [utf]
 \mainlanguage [en]
-\definepapersize[sheet][width=1920px, height=1440px]
+\definepapersize[sheet][width=1280px, height=960px]
 \setuppapersize[sheet][sheet]
 \setupexternalfigures[directory={img, 
     /home/ubuntu/EGU2016-Presentation, 
@@ -10,7 +10,6 @@
 \usemodule[simplefonts]
 \setmainfont[Adventor][expansion=quality,protrusion=quality]
 \setupcolors[state=start]
-\setupinteraction[state=start, color=blue, contrastcolor=blue]
 
 
 \definecolor[faimsblue][h=1B3E93]
@@ -23,7 +22,9 @@
     topspace=.185\pageheight,
     cutspace-.1\pagewidth,
     width=.87\pagewidth,
-    height=.798\pageheight
+    height=.798\pageheight,
+    bottomspace=.8cm,
+    bottom=12pt   
     ]
 
 
@@ -68,11 +69,11 @@ end
 
 
 \setlayerframed[footy][frame=off, x=.895\pagewidth, y=.15\pageheight, align=center]
-  {\color[white]{\setupbodyfont[21pt]\setupwhitespace[none]www.faims.edu.au}
+  {\color[white]{\setupbodyfont[14pt]\setupwhitespace[none]www.faims.edu.au}
     }
 
-\setlayerframed[footy][frame=off, x=.85\pagewidth, y=.1475\pageheight, align=center]
-  {\color[white]{\setupbodyfont[21pt]\setupwhitespace[none]\externalfigure[by-sa.eps][ frame=off, type=pdf, height=.019\pageheight]{}}
+\setlayerframed[footy][frame=off, x=.84\pagewidth, y=.15\pageheight, align=center]
+  {\color[white]{\setupbodyfont[21pt]\setupwhitespace[none]\externalfigure[by-sa.eps][ frame=off, type=pdf, height=.022\pageheight]{}}
     }
 
 
@@ -86,7 +87,7 @@ end
 \setlayerframed[footy][frame=off, x=.893\pagewidth, y=.0399\pageheight, align=right, background=color, backgroundcolor=faimsblue, width=10px, height=.0605\pageheight]{}
 
 \setlayerframed[footy][frame=off, x=.895\pagewidth, y=.28\pageheight, align={stretch, verytolerant, hz, hanging},]
-  {\setupbodyfont[16pt]\setupinterlinespace[line=2ex]\sc\color[faimsblue]{
+  {\setupbodyfont[11pt]\setupinterlinespace[line=2ex]\sc\color[faimsblue]{
 
 
 
@@ -238,11 +239,28 @@ LIEF Award: \hfill LE140100151
 %\setupheadertexts[{\color[black]{\tfxx \midaligned{\rlap{\currentdate} \hfill Using the FAIMS Mobile App for field data recording \hfill \llap{Brian Ballsun-Stanton, Jens Klump, Shawn Ross}}}}]
 %\setupheader[state=start]
 
-\setuphead[section][placehead=yes, page=yes, number=no, align=middle, style={\setupbodyfont[60pt]}]
+\setuphead[section][placehead=yes, page=yes, number=no, align=middle, style={\setupbodyfont[40pt]}]
 \setuphead[subsection][number=no]
 
 
-\setupbodyfont[20pt]
+\setupinteraction
+  [page=yes,
+   color=faimsblue,
+   contrastcolor=faimsorange,
+   menu=on,
+   state=start]
+
+\setupsubpagenumber
+  [way=bytext,
+   state=start]
+
+
+\startinteractionmenu[bottom]
+
+{\interactionbar[alternative=f,width=\makeupwidth,height=2ex]}
+\stopinteractionmenu
+
+\setupbodyfont[18pt]
 
 \stopenvironment
 
