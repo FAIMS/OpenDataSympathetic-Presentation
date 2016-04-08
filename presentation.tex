@@ -15,9 +15,9 @@
 \setupcombinations[distance=10px, width=\textwidth, align=flushleft, style={\setupbodyfont[14pt]}]
 \startcombination[4*2]%
 {\externalfigure[noteBook1.jpg][width=.25\textwidth]}{Geosampling data was initially collected via notebook.}
-{\externalfigure[noteBook2.jpg][width=.12\textwidth]\externalfigure[noteBook3.jpg][width=.12\textwidth]}{CSIRO Researchers then moved to pre-printed field notebooks for more accurate data entry. }
+{\externalfigure[noteBook2.jpg][width=.125\textwidth]\externalfigure[noteBook3.jpg][width=.125\textwidth]}{CSIRO Researchers then moved to pre-printed field notebooks for more accurate data entry. }
 
-{\externalfigure[CSIROWireframe.pdf][width=.2\textwidth]}{Imported into FAIMS Mobile, the CSIRO workflow was modeled in the generalised field recording app.}
+{\externalfigure[CSIROWireframe.pdf][width=.2\textwidth]}{Imported into FAIMS Mobile, the CSIRO workflow was deployed for the multi-device field recording.}
 
 {\setupcombinations[distance=5px, width=fit]
 \startcombination[2*2]
@@ -27,20 +27,20 @@
 \stopcombination}
 {These are the primary files which implement a scriptable model, view, and controller field data recording implementation.}
 %nextrow
-{\externalfigure[app2.png][width=.1\textwidth] \externalfigure[app3.png][width=.1\textwidth]}{After extensive testing, an app was deployed. These are three screens, designated by the wireframe and scripted by the files before.}
+{\externalfigure[app2.png][width=.1\textwidth] \externalfigure[app3.png][width=.1\textwidth]}{After extensive testing, a module was deployed. These are two screenshots from the module showing multi-column formats, radiobuttons, checkboxes, and hierarchical dropdowns.}
 {\externalfigure[establishingShot.jpg][width=.24\textwidth]}{Data was collected on multiple tablets in the field. These tablets were offline to save battery.}
-{\externalfigure[faimsInTruck.jpg][width=.24\textwidth]}{FAIMS is designed to work completely offline, allowing asynchronous work on multiple tablets with eventual sync. The server, here, was built into a portable UPS in the truck.}
-{\externalfigure[exportData.png][width=.24\textwidth]}{After return to base, data exported into shapefiles, a sqlite database, and CSVs. All pictures are renamed to the record they belong to and tagged with their record's metadata.}
+{\externalfigure[faimsInTruck.jpg][width=.24\textwidth]}{FAIMS is designed to work offline, allowing asynchronous work on tablets with eventual sync. The server, here, was built into a portable UPS in the truck.}
+{\externalfigure[exportData.png][width=.24\textwidth]}{After return to base, data was exported into shapefiles, a sqlite database, and CSVs. All pictures are renamed to the record they belong to and tagged with their record's metadata.}
 \stopcombination
 
 
 
 \page
-\setupcombinations[distance=10px, width=\textwidth, align=flushleft]
+\setupcombinations[distance=10px, width=\textwidth, align={normal, hanging, hz}]
 
 \startcombination[2*1]
 {\externalfigure[dknf.pdf][width=.49\textwidth]}{
-Records are defined in 3 logical tables\footnote. \quote{Rows} are defined in the ArchEntity table, which also holds cruical GIS data. \quote{Columns} are defined by the attribute and Ideal Entity tables. The Attribute table defines what attributes are possible, their names, and their list/export formats. The Ideal Entity table defines which attributes belong to which entity. By defining these tables in DML (Data {\em Manipulation} Language) rather than DDL (Data {\em Definition} Language), the structure of the database remains consistent. This consistent structure allows for significant query reuse and allows us to dynamically script the fields of a workflow {\em after} all the fundamental data interactions of the app have been rewritten.
+Records are defined in 3 logical tables\footnote. \quote{Rows} are defined in the ArchEntity table, which also holds cruical GIS data. \quote{Columns} are defined by the attribute and Ideal Entity tables. The Attribute table defines what attributes are possible, their names, and their list/export formats. The Ideal Entity table defines which attributes belong to which entity. By defining these tables in DML (Data {\em Manipulation} Language) rather than DDL (Data {\em Definition} Language), the structure of the database remains consistent. This consistent structure allows for significant query reuse and allows us to dynamically script the fields of a workflow {\em after} all the fundamental data interactions of FAIMS Mobile have been rewritten.
 
 \page
 
@@ -50,7 +50,7 @@ Records are defined in 3 logical tables\footnote. \quote{Rows} are defined in th
 
 }
 {\externalfigure[oss.pdf][width=.49\textwidth]}{ 
-The three {\em sine qua non} FOSS libraries without which this project could not exist are:
+The three {\em sine qua non} open-source libraries of this project are:
 \startitemize[joinedup, packed]
 \item JavaRosa which allows us to parse XML into native android elements;
 \item BeanShell which allows us to include a java-like scripting language;
@@ -74,17 +74,16 @@ By relying on stable, free, and public code we did not have to reinvent the whee
 
 {\tfb Abstract:}
 
-The FAIMS mobile app was originally developed for field data recording in archaeology. It has since been adapted for use in other disciplines.
+FAIMS Mobile was originally developed for field data recording in archaeology. It has since been adapted for use in other disciplines.
 
-The app is based on Free and Open Source Software with open data formats to allow easy federation with other data formats.
-This presentation describes the internal architecture of the FAIMS app and how it can be used.
+The app is based on open-source software with open data formats to allow easy federation with other data formats. This presentation describes the internal architecture of FAIMS Mobile and how it can be used.
 
 \vfill
 
 
 \section{CSIRO Workflow}
 
-FAIMS Mobile is a FOSS Software platform (comprising an android client and ruby server on ubuntu) funded by the Australian Research Council, the National eResearch Tools and Resources scheme (Australia), and six Australian universities. It is designed to provide a means of collecting rich, geospatial, and multi-media field data on multiple tablets with no network connectivity in the middle of nowhere. While originally intended to support archaeologists, FAIMS Mobile provided a sufficiently general field recording framework to allow for geochemical and biological sampling by multiple teams of CSIRO researchers.
+FAIMS Mobile is an open-source software platform (comprising an android client and ruby server on ubuntu) funded by the Australian Research Council, the National eResearch Tools and Resources scheme (Australia), and six Australian universities. It is designed to provide a means of collecting rich, geospatial, and multi-media field data on multiple tablets with no network connectivity in the middle of nowhere. While originally intended to support archaeologists, FAIMS Mobile provided a sufficiently general field recording framework to allow for geochemical and biological sampling by multiple teams of CSIRO researchers.
 
 
 \placefigure[here, none][fig1]{}{\externalfigure[noteBook1.jpg][width=.55\textwidth]}
@@ -109,7 +108,7 @@ The next stage of field data collection entailed typesetting data collection for
 
 \startcombination[2*1]
 {\externalfigure[CSIROWireframe.pdf][width=.58\textwidth]}{}
-{\framed[width=.4\textwidth, height=\textheight,  align={nothyphenated,verytolerant}, frame=off]{\setupwhitespace[big]Imported into FAIMS Mobile, the CSIRO workflow was modeled in the generalised field recording app. This workflow implements a waterfall SDLC methodology. Due to the requirements of offline field research and the asynchronous sync, {\em changes} to a module in the field are quite difficult and so we've embraced a waterfall model to get the design \quote{right} in the first place. 
+{\framed[width=.4\textwidth, height=\textheight,  align={nothyphenated,verytolerant}, frame=off]{\setupwhitespace[big]Imported into FAIMS Mobile, the CSIRO workflow was deployed for the multi-device field recording. This workflow implements a waterfall methodology. Due to the requirements of offline field research and the asynchronous sync, {\em changes} to a module in the field are quite difficult and so we've embraced a waterfall model to get the design \quote{right} in the first place. 
 
 This wireframe diagram diagrams every attribute to appear in the module as well as the workflows of movement from screen to screen. It is both intended as a representational explainer as well as a design document. It allows everyone to understand the module to be in a way that reduces misunderstandings. This wireframe demonstrates how four different field collection methods: Water samples, rock samples, soil samples, and plant samples were all incorporated into the same data collection module. 
 \vfill}
@@ -121,7 +120,7 @@ This wireframe diagram diagrams every attribute to appear in the module as well 
 {\externalfigure[dataSchema.png][width=.49\textwidth]}{Data Schema (XML)}
 {\externalfigure[uiLogic.png][width=.49\textwidth]}{Logic (Beanshell)}
 {\externalfigure[uiSchema.png][width=.49\textwidth]}{UI Schema (XML)}
-{\framed[width=.49\textwidth, height=.4\textheight,  align={nothyphenated,verytolerant}, frame=off]{These are the primary files which implement a scriptable model (data schema), view (ui schema), and controller (ui logic) field data recording implementation. By scripting a field recording workflow, the app itself can function on supporting field recording in network-degraded environments, and individual \quote{modules} (functioning sets of these scripts) can focus on implementing highly specific and customised workflows.}}{}
+{\framed[width=.49\textwidth, height=.4\textheight,  align={nothyphenated,verytolerant}, frame=off]{These are the primary files which implement a scriptable model (data schema), view (ui schema), and controller (ui logic) field data recording implementation. By scripting a field recording workflow, FAIMS Mobile itself can function on supporting field recording in network-degraded environments, and individual \quote{modules} (functioning sets of these scripts) can focus on implementing highly specific and customised workflows.}}{}
 \stopcombination
 
 
@@ -131,13 +130,11 @@ This wireframe diagram diagrams every attribute to appear in the module as well 
 {\externalfigure[app1.png][width=.39\textwidth]}{Multiple Ph/Eh measurements can be taken. We have support for a dynamic UI, so the number of measurements is finite, but unbounded. The \quote{best} measurement can then be written back into the parent entity.}
 
 {\externalfigure[app2.png][width=.25\textwidth]}{Multi-column layouts are possible for \quote{tabular} data. The choice of the number of columns is mainly a choice of device size: smaller androids do not deal with many columns well.}
-{\externalfigure[app3.png][width=.25\textwidth]}{We support checkboxes (all in a single attribute), dropdowns, and radiobuttons. Dropdowns can have a hierarchical navigation, for rapid selection among hundreds of choices.}
+{\externalfigure[app3.png][width=.25\textwidth]}{We support checkboxes, drop-downs, and radio buttons. Dropdowns can have a hierarchical navigation, for rapid selection among hundreds of choices.}
 \stopcombination
 \blank
 
-After extensive testing, an app was deployed. These are three screens, designated by the wireframe and scripted by the files before.
-
-These are three screens from the app showing some of the configurations of attributes suitable for this workflow. Of note, each attribute has annotation (the little pencil) and certainty (the little ?), allowing users, with a long-press, to \quote{write in the margins} of that attribute. The circled-i icon represents a description or information box, allowing descriptive or assistive text to appear for the attribute and any elements of the constrained vocabularies it has, thereby providing the benefit of a contextual field manual. Records autosave, meaning users can interact with the module in much the same way they do with paper and pencil. 
+These are three screens from the FAIMS Mobile module showing some of the configurations of attributes suitable for this workflow. Of note, each attribute has annotation (the little pencil) and certainty (the little ?), allowing users, with a long-press, to \quote{write in the margins} of that attribute. The circled-i icon represents a description or information box, allowing descriptive or assistive text to appear for the attribute and any elements of the constrained vocabularies it has, thereby providing the benefit of a contextual field manual. Records autosave, meaning users can interact with the module in much the same way they do with paper and pencil. 
 
 
 \page
@@ -176,7 +173,7 @@ By combining these in a single \quote{measurement.} Highly nuanced but machine r
 }
 {\framed[width=.49\textwidth, height=.49\textheight,  align={nothyphenated,verytolerant}, frame=off]{\setupwhitespace[big]The fundamental innovation of FAIMS Mobile is the domain-key normal form append only datastore. Each record is identified by two naturally-unique identifiers: the user and the time of creation. Beyond that, every action is timestamped to allow for full histories and audit trails. Because every record and every action is timestamped and unique to a user, we can combine different versions of the database (i.e. those created on multiple devices over a week's trek through the Australian Outback) without any risk of clobbering edits or data. The most recent activity is \quote{true}.
 
-Records are defined in 3 logical tables. \quote{Rows} are defined in the ArchEntity table, which also holds cruical GIS data. \quote{Columns} are defined by the attribute and Ideal Entity tables. The Attribute table defines what attributes are possible, their names, and their list/export formats. The Ideal Entity table defines which attributes belong to which entity. By defining these tables in DML (data manipulation language) rather than DDL (Data Definition Language), the structure of the database remains consistent. This structure allows for query reuse and allows us to script the fields of a workflow after all the fundamental data interactions of the app have been written.
+Records are defined in 3 logical tables. \quote{Rows} are defined in the ArchEntity table, which also holds cruical GIS data. \quote{Columns} are defined by the attribute and Ideal Entity tables. The Attribute table defines what attributes are possible, their names, and their list/export formats. The Ideal Entity table defines which attributes belong to which entity. By defining these tables in DML (data manipulation language) rather than DDL (Data Definition Language), the structure of the database remains consistent. This structure allows for query reuse and allows us to script the fields of a workflow after all the fundamental data interactions of FAIMS Mobile have been written.
 
 
 \vfill
@@ -197,13 +194,13 @@ This domain-key structure is also necessary to support the append only design. A
 
 The append-only design also protects against data-loss, as \quote{deletions} are merely a flag on the record which hides it from normal view. Thus, this database is designed to preserve user actions at all costs, allowing differences in datastores to be sent to the server and thereby distributed to all devices. This also has the virtue, so long as devices sync relatively often, of creating a complete backup of the datastore on every device, further armouring the database against mischance.}
 
-\section{OSS Heritage graph}
+\section{Open-source Heritage graph}
 
 
 \startcombination[2*1]
 {\externalfigure[oss.pdf][width=.5\textwidth]}{}
 {\framed[width=.5\textwidth, height=.8\textheight,  align={nothyphenated,verytolerant}, frame=off]{\setupwhitespace[big]%
-FAIMS Mobile stands on the shoulders of giants. The only way an app this complex would be possible would be via the contributions of many open source projects -- which is why our own work is released under the GPLv3. Crucial technologies include:
+FAIMS Mobile stands on the shoulders of giants. The only way an app this complex would be possible would be via the contributions of many open-source projects -- which is why our own work is released under the GPLv3. Crucial technologies include:
 
 \startitemize[joinedup, packed]
 \item JavaRosa which allows us to parse XML into native android elements;
