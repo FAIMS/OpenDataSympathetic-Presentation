@@ -1,7 +1,7 @@
 \environment envpresentation
 
 
-\setlayerframed[footy][frame=off, x=.01\pagewidth, y=.015\pageheight, align=flushleft, width=.88\pagewidth, height=.147\pageheight]%
+\setlayerframed[footy][frame=off, x=.01\pagewidth, y=.0455\pageheight, align=flushleft, width=.88\pagewidth, height=.147\pageheight]%
 {\color[white]{\setupbodyfont[52pt]\setupinterlinespace[line=0pt]\setupwhitespace[none]Using FAIMS Mobile for Field Data Recording \vfill}}
 
 
@@ -17,7 +17,7 @@
 {\externalfigure[noteBook1.jpg][width=.25\textwidth]}{Geosampling data was initially collected via notebook.}
 {\externalfigure[noteBook2.jpg][width=.125\textwidth]\externalfigure[noteBook3.jpg][width=.125\textwidth]}{CSIRO Researchers then moved to pre-printed field notebooks for more accurate data entry. }
 
-{\externalfigure[CSIROWireframe.pdf][width=.2\textwidth]}{Imported into FAIMS Mobile, the CSIRO workflow was deployed for the multi-device field recording.}
+{\externalfigure[CSIROWireframe.pdf][width=.2\textwidth]}{Imported into FAIMS Mobile, the CSIRO workflow was deployed for multi-device field recording.}
 
 {\setupcombinations[distance=5px, width=fit]
 \startcombination[2*2]
@@ -25,12 +25,12 @@
 {\externalfigure[uiLogic.png][width=.11\textwidth]}{Logic (Beanshell)}
 {\externalfigure[uiSchema.png][width=.11\textwidth]}{UI Schema (XML)}
 \stopcombination}
-{These are the primary files which implement a scriptable model, view, and controller field data recording implementation.}
+{Three customisable primary files implement a model, view, and controller field data recording system.}
 %nextrow
-{\externalfigure[app2.png][width=.1\textwidth] \externalfigure[app3.png][width=.1\textwidth]}{After extensive testing, a module was deployed. These are two screenshots from the module showing multi-column formats, radiobuttons, checkboxes, and hierarchical dropdowns.}
-{\externalfigure[establishingShot.jpg][width=.24\textwidth]}{Data was collected on multiple tablets in the field. These tablets were offline to save battery.}
-{\externalfigure[faimsInTruck.jpg][width=.24\textwidth]}{FAIMS is designed to work offline, allowing asynchronous work on tablets with eventual sync. The server, here, was built into a portable UPS in the truck.}
-{\externalfigure[exportData.png][width=.24\textwidth]}{After return to base, data was exported into shapefiles, a sqlite database, and CSVs. All pictures are renamed to the record they belong to and tagged with their record's metadata.}
+{\externalfigure[app2.png][width=.1\textwidth] \externalfigure[app3.png][width=.1\textwidth]}{After extensive testing, this recording system (\quote{module}) was deployed. These two screenshots from the app show multi-column formats, radiobuttons, checkboxes, and hierarchical dropdowns.}
+{\externalfigure[establishingShot.jpg][width=.24\textwidth]}{Data was collected on multiple tablets in remote field locations, offline.}
+{\externalfigure[faimsInTruck.jpg][width=.24\textwidth]}{FAIMS Mobile allows asynchronous work on tablets with eventual synchronisation, when the tablets connect to a local or online network. A local server, shown here, was mounted in a truck for fieldwork.}
+{\externalfigure[exportData.png][width=.24\textwidth]}{After return to base, data was exported to shapefiles, a sqlite database, and CSVs. Upon export, all images were automatically renamed and tagged with metadata using information from the associated record.}
 \stopcombination
 
 
@@ -220,6 +220,7 @@ Choices of the fundamental libraries were made in 2012, when the project was com
 
 \startitemize
 \item To try this module, download FAIMS to your Android 4.4+ device, and download the CSIRO Geochemical Sample Collection module from the demo server.
+\item For additional user guidelines, please see our \quote{cheatsheets} at: https://www.fedarch.org/resources/handouts.pdf
 \item You can make your own data-collection modules for free via the user to developer documentation at https://www.fedarch.org/support/2.
 \item Code for this module is available at: https://github.com/FAIMS/CSIRO-Geochemistry-Sampling
 \item Source code for this presentation (compiled in \ConTeXt)~is available at: https://github.com/FAIMS/EGU2016-Presentation
