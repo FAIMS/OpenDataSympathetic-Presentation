@@ -1,0 +1,23 @@
+
+
+The goals of Open Data are: discoverability, preservation, and access to research data.
+
+
+Sympathetic Magic refers to the principle of "like produces like": that likeness between originals and replicas make them functionally the same. 
+
+
+There are often no checks on Open data's re-usability. Merely presenting the data with the hopes that someone will find it useful is a sympathetic remedy that does not help others fundamentally understand the dataset.
+
+
+Open Data must stand on a tripod:
+1. The data itself;
+2. Consistent and extensible data structures; and
+3. Documented collection and analysis methods for the data.
+
+A progressive Open Data dataset requires more than its publication in raw form. It must be able to answer novel questions: questions not anticipated during creation of the dataset.
+
+Degenerate datasets allow only for the rearrangement of what is known into expected outcomes. Degenerate research programmes follow : "like produces like."
+
+Two tests: 
+1. Is the re-user of data in a position to add data to the dataset?
+2. Can the re-user of data re-run the initial data analysis of the author without knowing the conclusion of the original work?

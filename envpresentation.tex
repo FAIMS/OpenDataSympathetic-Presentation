@@ -2,17 +2,21 @@
 %Context Environment for a basic Full Block Letter with Letterhead
 \enableregime [utf]
 \mainlanguage [en]
-\definepapersize[sheet][width=1280px, height=960px]
+\definepapersize[sheet][width=1920px, height=1080px]
 \setuppapersize[sheet][sheet]
 \setupexternalfigures[directory={img, 
     /home/ubuntu/EGU2016-Presentation, 
     /home/ubuntu/ConTeXt/img}]
-\usemodule[simplefonts]
-\setmainfont[Adventor][expansion=quality,protrusion=quality]
+%\usemodule[simplefonts]
+
+
+
+\definefontfamily [Main] [Serif] [Tex Gyre Adventor] [expansion=quality,protrusion=quality]
+\setupbodyfont[Main]
 \setupcolors[state=start]
 
 
-\definecolor[faimsblue][h=1B3E93]
+\definecolor[faimsblue][h=263d96]
 \definecolor[faimsorange][h=F68E1E]
 
 \setuplayout[
@@ -50,152 +54,99 @@ end
   {\ctxlua{userdata.makeqr([==[#1]==],[==[#2]==])}}
 
 \definelayer[footy]  % name of the layer
-    [x=0mm, y=265mm,  % from upper left corner of paper
-     width=\paperwidth, height=10mm, state=repeat] % let the layer cover the full paper
+    [x=0mm, y=0,  % from upper left corner of paper
+     width=\paperwidth, height=\paperheight, state=repeat] % let the layer cover the full paper
 
 
 \setupbackgrounds[page][background=footy, state=repeat]
 
-\setlayerframed[footy][frame=off, x=0mm, y=0mm, align=right, height=.175\pageheight, width=\pagewidth, background=color, backgroundcolor=faimsblue]{}
 
 
-\setlayerframed[footy][frame=off, x=0mm, y=.147\pageheight, align=right, height=.003\pageheight, width=\pagewidth, background=color,backgroundcolor=faimsorange, align=flushright, depth=10mm]{}
-
-  %\setlayerframed[footy][frame=off, x=00mm, y=234mm, align=right, height=30mm, width=919mm, align=flushright]
-  %{\color[white]{\setupbodyfont[30pt]For More Information on this poster: }}
-
-  %\setlayerframed[footy][frame=off, x=00mm, y=184mm, align=right, height=75mm, width=970mm, align=flushright]
-  %{\externalfigure[fedarch.png][width=41mm]}
+\setlayerframed[footy][frame=off, x=00mm, y=00mm, align=right, height=65mm, width=\pagewidth, background=color, backgroundcolor=faimsblue]
+  {}
 
 
-\setlayerframed[footy][frame=off, x=.895\pagewidth, y=.15\pageheight, align=center]
-  {\color[white]{\setupbodyfont[14pt]\setupwhitespace[none]www.faims.edu.au}
-    }
-
-\setlayerframed[footy][frame=off, x=.84\pagewidth, y=.15\pageheight, align=center]
-  {\color[white]{\setupbodyfont[21pt]\setupwhitespace[none]\externalfigure[by-sa.eps][ frame=off, type=pdf, height=.022\pageheight]{}}
-    }
+\setlayerframed[footy][frame=off, x=00mm, y=53mm, align=right, height=5mm, width=\pagewidth, background=color, backgroundcolor=faimsorange, align=flushright, depth=5mm]
+  {}
 
 
-\setlayerframed[footy][frame=off, x=.895\pagewidth, y=.005\pageheight, align=right]
-  {\externalfigure[faimsLogo.pdf][ frame=off, type=pdf, width=.1\pagewidth]{}}
-
-
-\setlayerframed[footy][frame=off, x=.895\pagewidth, y=.18\pageheight, align=right]
-  {\externalfigure[CSIRO_original.jpg][ frame=off, type=pdf, width=.1\pagewidth]{}}
-
-\setlayerframed[footy][frame=off, x=.893\pagewidth, y=.0399\pageheight, align=right, background=color, backgroundcolor=faimsblue, width=10px, height=.0605\pageheight]{}
-
-\setlayerframed[footy][frame=off, x=.895\pagewidth, y=.28\pageheight, align={stretch, verytolerant, hz, hanging},]
-  {\setupbodyfont[11pt]\setupinterlinespace[line=2ex]\sc\color[faimsblue]{
+\setlayerframed[footy][frame=off, x=1740px, y=51.75mm, align=right, height=20mm, width=20mm]
+  {\makeqr{https://osf.io/preprints/socarxiv/4da7m}[11]}
 
 
 
 
+\setlayerframed[footy][frame=off, x=1780px, y=10px, align=middle, width=45mm]
+  {\externalfigure[faimsLogoNoBorder.pdf][width=45mm]{}}
+
+\setlayerframed[footy][frame=off, x=1780px, y=10px, align=right, height=46mm, width=2px, background=color, backgroundcolor=faimsblue]
+  {}
 
 
 
-\setvariables[namespace][blank=.015\pagewidth]
+\setlayerframed[footy][frame=off, x=1780px, y=54mm, align=center, width=46mm]{\color[white]{\switchtobodyfont[Main, 13.6pt]www.fedarch.org}}
 
 
-
-\blank[\getvariable{namespace}{blank}]                
-\externalfigure[ARC_stacked.eps]
-                [width=.1\pagewidth]
-
-\blank[.005\pagewidth]                
-
-LIEF Award: \hfill LE140100151
+\setlayerframed[footy][frame=off, x=1780px, y=62mm, width=45mm, align={stretch, verytolerant, hz, hanging},]
+  {\switchtobodyfont[Main, 8pt]\setupinterlinespace[line=2ex]\sc\color[faimsblue]{
 
 
-\blank[.02\pagewidth]                
+\ctxlua{a=44}
+
+\bTABLE[frame=off, align={middle, lohi}, boffset=22px]
+\bTR \bTD[nc=2]
 \externalfigure[MQ_INT_HOR_RGB_POS_Borderless.pdf]
-                [width=.1\pagewidth]
-\blank[\getvariable{namespace}{blank}]                
+                [width=\ctxlua{context((a*1).."mm")}]
+\eTD \eTR \bTR \bTD[nc=2]          
 \externalfigure[unswL.eps]
-                [width=.1\pagewidth]
-\blank[\getvariable{namespace}{blank}]                
+                [width=\ctxlua{context((a*1).."mm")}]
+\eTD \eTR \bTR \bTD[nc=2]          
                \externalfigure[UQlogoC.eps]
-                [width=.092\pagewidth]
-\blank[\getvariable{namespace}{blank}]                                   
-          \externalfigure[usyd.png]
-                [width=.07\pagewidth]
-\blank[\getvariable{namespace}{blank}]                                    
-          \externalfigure[LaTrobe.png]
-                [width=.09\pagewidth]
-\blank[\getvariable{namespace}{blank}]                                      
+                [width=\ctxlua{context((a*1).."mm")}]
+\eTD \eTR \bTR \bTD[nc=2]          
           \externalfigure[flindersL.eps]
-                [width=.1\pagewidth]
-\blank[\getvariable{namespace}{blank}]                                       
-          \externalfigure[SCU-Logo.eps]
-                [width=.1\pagewidth]
-          
+                [width=\ctxlua{context((a*1).."mm")}]
+\eTD \eTR \bTR \bTD[nc=2]          
+          \externalfigure[LaTrobe.png]
+                [width=\ctxlua{context((a*1).."mm")}]
+\eTD \eTR \bTR \bTD[nc=2]          
+          \externalfigure[{DIcolour.jpg}]
+                [width=\ctxlua{context((a*1).."mm")}]{\framed[width=\ctxlua{context((a*1).."mm")}, frame=off]{\setupalign[middle]\switchtobodyfont[Main, 8pt] RAAP 2016-17}}                           
+\eTD \eTR \bTR \bTD[nc=2]          
+\externalfigure[ARC_stacked.eps]
+                [width=\ctxlua{context((a*1).."mm")}]{
+                \framed[width=\ctxlua{context((a*1).."mm")}, frame=off]{\setupalign[middle]\switchtobodyfont[8pt] LE140100151}}
+\eTD \eTR
+\setvariables[namespace][ht2=21mm]
 
 
+\bTR \bTD[nc=2] \externalfigure[CSIRO_Grad_RGB_hr.jpg][width=\ctxlua{context((a*1).."mm")}] \eTD  \eTR
+\bTR
+\bTD[nc=2] 
+          \externalfigure[{NSWInd.eps}]
+                [width=\ctxlua{context((a*1).."mm")}]   
+ \eTD \eTR
+\bTR \bTD \externalfigure[ADSreversedLogoRed.eps]
+                [width=\getvariable{namespace}{ht2}]
+\eTD \bTD \externalfigure[oclong.eps]
+                [width=\getvariable{namespace}{ht2}]
+                \eTD\eTR
+\bTR \bTD
+  \externalfigure[tdar-logo.png]
+                [width=\getvariable{namespace}{ht2}]
+   
 
+\eTD \bTD
+\externalfigure[nectar.eps]
+                [width=\getvariable{namespace}{ht2}]{
+                \framed[width=\getvariable{namespace}{ht2}, frame=off]{\setupalign[middle]\switchtobodyfont[7pt] RT043; V005}}
+                
 
-\blank[\getvariable{namespace}{blank}]                                       
-\setvariables[namespace][ht2=.045\pagewidth]
-%\externalfigure[nectar.eps]
-%      [width=\getvariable{namespace}{ht2}]
-%\blank[\getvariable{namespace}{blank}]                                       
-%
-%\externalfigure[Intersect_Logo_CMKY.eps]
-%      [width=\getvariable{namespace}{ht2}]
-%\blank[\getvariable{namespace}{blank}]                                       
-%
-%\externalfigure[tdar-logo.png]
-%      [width=\getvariable{namespace}{ht2}]
-%\blank[\getvariable{namespace}{blank}]                                       
-%
-%\externalfigure[ChicagoSquare.eps]
-%      [width=\getvariable{namespace}{ht2}]
-%\blank[\getvariable{namespace}{blank}]                                       
-%
-%\externalfigure[oclong.eps]
-%      [width=\getvariable{namespace}{ht2}]
-%\blank[\getvariable{namespace}{blank}]                                       
-%
-%\externalfigure[ADSreversedLogoRed.eps]
-%      [width=\getvariable{namespace}{ht2}]
+\eTD \eTR
+\eTABLE
 
-\setupcombinations[location=middle, distance=.01\pagewidth, after=]
-          \startcombination[2*3]          
-          {\externalfigure[nectar.eps]
-                [width=\getvariable{namespace}{ht2}]}{}
-          {\externalfigure[Intersect_Logo_CMKY.eps]
-                [width=\getvariable{namespace}{ht2}]}{}
-          {\externalfigure[tdar-logo.png]
-                [width=\getvariable{namespace}{ht2}]}{}
-          {\externalfigure[ChicagoSquare.eps]
-                [width=\getvariable{namespace}{ht2}]}{}
-          {\externalfigure[oclong.eps]
-                [width=\getvariable{namespace}{ht2}]}{}
-          {\externalfigure[ADSreversedLogoRed.eps]
-                [width=\getvariable{namespace}{ht2}]}{}
-\stopcombination
+  }}
 
-
-
-
-  }
-}
-
-
-
-
-\setlayerframed[footy]  % name of the layer
-    [frame=off]  % placement (from upper left corner of the layer)
-    {\framed[frame=off, topframe=off, width=\paperwidth, height=1080mm]{
-
-
-}}  % the actual contents of the layer
-
-\setupwhitespace[big]
-
-\placefigure[none, right, margin, top]{}{
-\framed[width=85mm, height=230mm, frame=off]{}
-}
 
 
 
@@ -242,7 +193,7 @@ LIEF Award: \hfill LE140100151
 %\setupheadertexts[{\color[black]{\tfxx \midaligned{\rlap{\currentdate} \hfill Using the FAIMS Mobile App for field data recording \hfill \llap{Brian Ballsun-Stanton, Jens Klump, Shawn Ross}}}}]
 %\setupheader[state=start]
 
-\setuphead[section][placehead=yes, page=yes, number=no, align=middle, style={\setupbodyfont[40pt]}]
+\setuphead[section][placehead=yes, page=yes, number=no, align=middle, style={\switchtobodyfont[40pt]}]
 \setuphead[subsection][number=no]
 
 
@@ -261,10 +212,9 @@ LIEF Award: \hfill LE140100151
 \startinteractionmenu[bottom]
 
 
-{\interactionbar[alternative=f,width=\makeupwidth,height=2ex]}
+{\interactionbar[alternative=f,width=\makeupwidth,height=1ex]}
 \stopinteractionmenu
 
-\setupbodyfont[18pt]
+\setupbodyfont[48pt]
 
 \stopenvironment
-

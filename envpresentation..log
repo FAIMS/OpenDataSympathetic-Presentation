@@ -1,0 +1,87 @@
+open source     > level 1, order 1, name '/opt/context/tex/texmf-context/tex/context/base/mkiv/cont-yes.mkiv'
+system          > 
+system          > ConTeXt  ver: 2017.10.19 13:50 MKIV beta  fmt: 2017.10.20  int: english/english
+system          > 
+system          > 'cont-new.mkiv' loaded
+open source     > level 2, order 2, name '/opt/context/tex/texmf-context/tex/context/base/mkiv/cont-new.mkiv'
+close source    > level 2, order 2, name '/opt/context/tex/texmf-context/tex/context/base/mkiv/cont-new.mkiv'
+system          > files > jobname 'envpresentation.', input './envpresentation.', result 'envpresentation.'
+fonts           > latin modern fonts are not preloaded
+languages       > language 'en' is active
+
+tex error       > tex error on line 8 in file /opt/context/tex/texmf-context/tex/context/base/mkiv/cont-yes.mkiv: ! I can't find file `./envpresentation.'.
+
+l.8 }
+   
+\clf_processjob ...uafunction \16>>clf_processjob 
+                                                  
+l.97 \getvalue{clf_processjob}
+                             % from cont-run.lua
+
+ 1     %D \module
+ 2     %D   [       file=cont-yes,
+ 3     %D        version=2012.06.01,
+ 4     %D          title=\CONTEXT\ Miscellaneous Macros,
+ 5     %D       subtitle=Startup Stub,
+ 6     %D         author=Hans Hagen,
+ 7     %D           date=\currentdate,
+ 8 >>  %D      copyright={PRAGMA ADE \& \CONTEXT\ Development Team}]
+ 9     %C
+10     %C This module is part of the \CONTEXT\ macro||package and is
+11     %C therefore copyrighted by \PRAGMA. See mreadme.pdf for
+12     %C details.
+13     
+14     % At some point I will reconsider the \starttext .. \stoptext
+15     % wraping as we can assume proper styling. It's a left-over from
+16     % mkii that we need to get rid of.
+17     
+18     % now moved to cont-run.lua
+
+Please type another input file name: 
+open source     > level 2, order 3, name 'envpresentation.tex'
+
+tex error       > tex error on line 1 in file envpresentation.tex: ! Interruption
+
+l.1 \startenvironment
+                    envpresentation
+
+ 1 >>  \startenvironment envpresentation
+ 2     %Context Environment for a basic Full Block Letter with Letterhead
+ 3     \enableregime [utf]
+ 4     \mainlanguage [en]
+ 5     \definepapersize[sheet][width=1920px, height=1080px]
+ 6     \setuppapersize[sheet][sheet]
+ 7     \setupexternalfigures[directory={img, 
+ 8         /home/ubuntu/EGU2016-Presentation, 
+ 9         /home/ubuntu/ConTeXt/img}]
+10     \usemodule[simplefonts]
+11     \setmainfont[Adventor][expansion=quality,protrusion=quality]
+
+
+? [A
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, E to edit your file,
+H for help, X to quit.
+? 
+
+tex error       > tex error on line 1 in file envpresentation.tex: ! Emergency stop
+
+l.1 \startenvironment
+                    envpresentation
+
+ 1 >>  \startenvironment envpresentation
+ 2     %Context Environment for a basic Full Block Letter with Letterhead
+ 3     \enableregime [utf]
+ 4     \mainlanguage [en]
+ 5     \definepapersize[sheet][width=1920px, height=1080px]
+ 6     \setuppapersize[sheet][sheet]
+ 7     \setupexternalfigures[directory={img, 
+ 8         /home/ubuntu/EGU2016-Presentation, 
+ 9         /home/ubuntu/ConTeXt/img}]
+10     \usemodule[simplefonts]
+11     \setmainfont[Adventor][expansion=quality,protrusion=quality]
+
+End of file on the terminal!
+
+

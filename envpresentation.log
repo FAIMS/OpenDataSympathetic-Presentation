@@ -1,0 +1,113 @@
+open source     > level 1, order 1, name '/opt/context/tex/texmf-context/tex/context/base/mkiv/cont-yes.mkiv'
+system          > 
+system          > ConTeXt  ver: 2017.10.19 13:50 MKIV beta  fmt: 2017.10.20  int: english/english
+system          > 
+system          > 'cont-new.mkiv' loaded
+open source     > level 2, order 2, name '/opt/context/tex/texmf-context/tex/context/base/mkiv/cont-new.mkiv'
+close source    > level 2, order 2, name '/opt/context/tex/texmf-context/tex/context/base/mkiv/cont-new.mkiv'
+system          > files > jobname 'envpresentation', input './envpresentation', result 'envpresentation'
+fonts           > latin modern fonts are not preloaded
+languages       > language 'en' is active
+open source     > level 2, order 3, name '/home/mq20151400/OpenDataSympathetic-Presentation/envpresentation.tex'
+selectfont      > The name 'texgyreadventorregular' is not a proper family name, use 'texgyreadventor' instead.
+selectfont      > The name 'texgyreadventorregular' is not a proper family name, use 'texgyreadventor' instead.
+selectfont      > The name 'texgyreadventorregular' is not a proper family name, use 'texgyreadventor' instead.
+selectfont      > The name 'texgyreadventorregular' is not a proper family name, use 'texgyreadventor' instead.
+selectfont      > The name 'texgyreadventorregular' is not a proper family name, use 'texgyreadventor' instead.
+selectfont      > The name 'texgyreadventorregular' is not a proper family name, use 'texgyreadventor' instead.
+fonts           > preloading modern-designsize (math)
+fonts           > typescripts > unknown library 'modern-designsize'
+fonts           > 'fallback modern-designsize mm 12pt' is loaded
+fonts           > preloading modern-designsize (mono)
+fonts           > 'fallback modern-designsize tt 12pt' is loaded
+colors          > 'rgb' color space is supported
+colors          > 'cmyk' color space is supported
+setup           > error in line 33, namespace 'layout', key 'cutspace-.1\pagewidth '
+fonts           > bodyfont '13.6pt' is defined (can better be done global)
+fonts           > bodyfont '16.32pt' is defined (can better be done global)
+fonts           > bodyfont '10.88pt' is defined (can better be done global)
+fonts           > bodyfont '18pt' is defined (can better be done global)
+fonts           > bodyfont '21.6pt' is defined (can better be done global)
+close source    > level 2, order 3, name '/home/mq20151400/OpenDataSympathetic-Presentation/envpresentation.tex'
+system          > invalid \starttext ... \stoptext structure
+close source    > level 1, order 3, name '/opt/context/tex/texmf-context/tex/context/base/mkiv/cont-yes.mkiv'
+
+system          > start used files
+
+system          > text: envpresentation
+system          >   environment: envpresentation
+
+system          > stop used files
+
+
+system          > start used files
+
+system          >    1: filename=char-prv.lua filetype=tex format=tex foundname=/opt/context/tex/texmf-context/tex/context/base/mkiv/char-prv.lua fullname=/opt/context/tex/texmf-context/tex/context/base/mkiv/char-prv.lua usedmethod=database
+system          >    2: filename=cont-yes.mkiv filetype=tex foundname=/opt/context/tex/texmf-context/tex/context/base/mkiv/cont-yes.mkiv fullname=/opt/context/tex/texmf-context/tex/context/base/mkiv/cont-yes.mkiv usedmethod=database
+system          >    3: filename=publ-imp-default.lua filetype=scripts foundname=/opt/context/tex/texmf-context/tex/context/base/mkiv/publ-imp-default.lua fullname=/opt/context/tex/texmf-context/tex/context/base/mkiv/publ-imp-default.lua usedmethod=database
+system          >    4: filename=cont-new.mkiv filetype=tex foundname=/opt/context/tex/texmf-context/tex/context/base/mkiv/cont-new.mkiv fullname=/opt/context/tex/texmf-context/tex/context/base/mkiv/cont-new.mkiv usedmethod=database
+system          >    5: filename=lang-exc.lua filetype=scripts foundname=/opt/context/tex/texmf-context/tex/context/base/mkiv/lang-exc.lua fullname=/opt/context/tex/texmf-context/tex/context/base/mkiv/lang-exc.lua usedmethod=database
+system          >    6: filename=lang-us.lua filetype=scripts foundname=/opt/context/tex/texmf-context/tex/context/patterns/mkiv/lang-us.lua fullname=/opt/context/tex/texmf-context/tex/context/patterns/mkiv/lang-us.lua usedmethod=database
+system          >    7: filename=/home/mq20151400/OpenDataSympathetic-Presentation/envpresentation foundname=/home/mq20151400/OpenDataSympathetic-Presentation/envpresentation.tex fullname=/home/mq20151400/OpenDataSympathetic-Presentation/envpresentation.tex usedmethod=qualified
+system          >    8: filename=texgyreadventor-regular.otf filetype=otf format=otf foundname=/opt/context/tex/texmf/fonts/opentype/public/tex-gyre/texgyreadventor-regular.otf fullname=/opt/context/tex/texmf/fonts/opentype/public/tex-gyre/texgyreadventor-regular.otf usedmethod=database
+system          >    9: filename=/tmp/lua_hawNwo.png format=tex foundname=/tmp/lua_hawNwo.png fullname=/tmp/lua_hawNwo.png usedmethod=direct
+system          >   10: filename=faimsLogoNoBorder.pdf format=tex foundname=faimsLogoNoBorder.pdf fullname=/home/mq20151400/OpenDataSympathetic-Presentation/faimsLogoNoBorder.pdf usedmethod=direct
+system          >   11: filename=MQ_INT_HOR_RGB_POS_Borderless.pdf format=tex foundname=MQ_INT_HOR_RGB_POS_Borderless.pdf fullname=/home/mq20151400/OpenDataSympathetic-Presentation/MQ_INT_HOR_RGB_POS_Borderless.pdf usedmethod=direct
+system          >   12: filename=m_k_i_v_unswL.eps.pdf format=tex foundname=m_k_i_v_unswL.eps.pdf fullname=/home/mq20151400/OpenDataSympathetic-Presentation/m_k_i_v_unswL.eps.pdf usedmethod=direct
+system          >   13: filename=m_k_i_v_UQlogoC.eps.pdf format=tex foundname=m_k_i_v_UQlogoC.eps.pdf fullname=/home/mq20151400/OpenDataSympathetic-Presentation/m_k_i_v_UQlogoC.eps.pdf usedmethod=direct
+system          >   14: filename=m_k_i_v_flindersL.eps.pdf format=tex foundname=m_k_i_v_flindersL.eps.pdf fullname=/home/mq20151400/OpenDataSympathetic-Presentation/m_k_i_v_flindersL.eps.pdf usedmethod=direct
+system          >   15: filename=LaTrobe.png format=tex foundname=LaTrobe.png fullname=/home/mq20151400/OpenDataSympathetic-Presentation/LaTrobe.png usedmethod=direct
+system          >   16: filename=DIcolour.jpg format=tex foundname=DIcolour.jpg fullname=/home/mq20151400/OpenDataSympathetic-Presentation/DIcolour.jpg usedmethod=direct
+system          >   17: filename=m_k_i_v_ARC_stacked.eps.pdf format=tex foundname=m_k_i_v_ARC_stacked.eps.pdf fullname=/home/mq20151400/OpenDataSympathetic-Presentation/m_k_i_v_ARC_stacked.eps.pdf usedmethod=direct
+
+system          > stop used files
+
+
+system          > start commandline options
+
+system          > currentrun="1"
+system          > fulljobname="./envpresentation"
+system          > input="./envpresentation"
+system          > kindofrun="1"
+system          > maxnofruns="9"
+system          > no-parse-first-line="true"
+
+system          > stop commandline options
+
+
+system          > start commandline files
+
+system          >    1: ./envpresentation
+
+system          > stop commandline files
+
+
+modules         > start used modules
+
+
+modules         > stop used modules
+
+
+mkiv lua stats  > used config file: selfautoparent:/texmf/web2c/texmfcnf.lua
+mkiv lua stats  > used cache path: /opt/context/tex/texmf-cache/luatex-cache/context/5fe67e0bfe781ce0dde776fb1556f32e
+mkiv lua stats  > resource resolver: loadtime 0.007 seconds, 0 scans with scantime 0.000 seconds, 0 shared scans, 17 found files, scanned paths: <none>
+mkiv lua stats  > stored bytecode data: 405 modules (0.165 sec), 91 tables (0.009 sec), 496 chunks (0.174 sec)
+mkiv lua stats  > traced context: maxstack: 1420, freed: 2, unreachable: 1418
+mkiv lua stats  > cleaned up reserved nodes: 55 nodes, 10 lists of 453
+mkiv lua stats  > node memory usage: 2 glue, 2 kern, 2 penalty, 8 attribute, 49 glue_spec, 3 attribute_list, 2 temp, 2 user_defined, 78 pdf_setmatrix, 39 pdf_save, 39 pdf_restore
+mkiv lua stats  > node list callback tasks: 7 unique task lists, 5 instances (re)created, 508 calls
+mkiv lua stats  > used backend: pdf (backend for directly generating pdf output)
+mkiv lua stats  > jobdata time: 0.001 seconds saving, 0.000 seconds loading
+mkiv lua stats  > callbacks: 1084 direct, 460 indirect, 1544 total
+mkiv lua stats  > randomizer: resumed with value 0.9218293800586
+mkiv lua stats  > loaded patterns: en::2, load time: 0.000
+mkiv lua stats  > result saved in file: envpresentation.pdf, compresslevel 3, objectcompresslevel 3
+mkiv lua stats  > loaded fonts: 1 files: texgyreadventor-regular.otf
+mkiv lua stats  > font engine: otf 3.103, afm 1.513, tfm 1.000, 18 instances, 17 shared in backend, 3 common vectors, 14 common hashes, load time 0.053 seconds 
+mkiv lua stats  > graphics processing time: 0.027 seconds including tex, 54 processed images, 15 unique asked, 12 bad names
+mkiv lua stats  > used platform: linux-64, type: unix, binary subtree: texmf-linux-64
+mkiv lua stats  > used engine: luatex version 1.05 with functionality level 6357, banner: this is luatex, version 1.05.0 (tex live 2017)
+mkiv lua stats  > control sequences: 46073 of 65536 + 100000
+mkiv lua stats  > lua properties: engine: lua, used memory: 60 MB (ctx: 59 MB), hash type: lua, hash chars: min(64,40), symbol mask: utf (τεχ)
+mkiv lua stats  > runtime: 0.303 seconds
+
